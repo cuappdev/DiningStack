@@ -108,17 +108,6 @@ enum DataError: ErrorType {
     case ServerError
 }
 
-/// FileName for JSON data location
-let FileName = "/eateryJSON.dat"
-
-/**
- Returns the path for user documents directory
-*/
-func getDocumentsDirectory() -> String {
-    let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-    return path
-}
-
 /// Top-level class to communicate with Cornell Dining
 public class DataManager: NSObject {
     
@@ -127,41 +116,6 @@ public class DataManager: NSObject {
     
     /// List of all the Dining Locations with parsed events and menus
     private (set) public var eateries: [Eatery] = []
-    
-    /// Timestamp of last fetch from Cornell API
-    public var dateLastFetched: NSDate? {
-        get {
-            let defaults = NSUserDefaults.standardUserDefaults()
-            if let date = defaults.objectForKey("dateLastFetched") as? NSDate {
-                return date
-            } else {
-                return nil
-            }
-        } set {
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject(newValue, forKey: "dateLastFetched")
-        }
-    }
-    
-    /**
-     Reads eateries from user documents and stores them in the 'eateries' property.
-     
-     Returns: Bool whether the operation succeeded
-     */
-    public func readEateriesFromDisk() -> Bool {
-        let path = getDocumentsDirectory().stringByAppendingString(FileName)
-        if let data = NSData(contentsOfFile: path) {
-            
-            let json = JSON(data: data)
-            
-            let eateryList = json["data"]["eateries"]
-            self.eateries = eateryList.map { Eatery(json: $0.1) }
-            
-            return true
-        } else {
-            return false
-        }
-    }
     
     /**
      Sends a GET request to the Cornell API to get the events for all eateries and
@@ -193,16 +147,6 @@ public class DataManager: NSObject {
             
             let eateryList = json["data"]["eateries"]
             self.eateries = eateryList.map { Eatery(json: $0.1) }
-            
-            dateLastFetched = NSDate()
-            
-            let path = getDocumentsDirectory().stringByAppendingString(FileName)
-            
-            do {
-                try data.writeToFile(path, options: .DataWritingAtomic)
-            } catch {
-                completion?(error: error)
-            }
             
             completion?(error: nil)
         }
