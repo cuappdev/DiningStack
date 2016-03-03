@@ -355,6 +355,21 @@ public class Eatery: NSObject {
         }
         return iterableMenu
     }
-    
-}
 
+    public func sortMenu(menu: [String: [MenuItem]]) -> [(String, [MenuItem])] {
+        
+        let sortedMenu = menu.sort {
+            if($0.0 == "Hot Traditional Station - Entrees") {
+                return true
+            }
+            
+            if($0.0 == "Hot Traditional Station - Sides" && $1.0 != "Hot Traditional Station - Entrees") {
+                return true
+            }
+            
+            return false
+        }
+        
+        return sortedMenu
+    }
+ }
