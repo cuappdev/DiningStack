@@ -193,27 +193,45 @@ public class Eatery: NSObject {
         let hoursJSON = json[APIKey.Hours.rawValue]
         
         for (_, hour) in hoursJSON {
-            let eventsJSON = hour[APIKey.Events.rawValue]
-            let key        = hour[APIKey.Date.rawValue].stringValue
-            
-            var currentEvents: [String: Event] = [:]
-            for (_, eventJSON) in eventsJSON {
-                let event = Event(json: eventJSON)
-                currentEvents[event.desc] = event
+          let eventsJSON = hour[APIKey.Events.rawValue]
+          let key        = hour[APIKey.Date.rawValue].stringValue
+          
+          var currentEvents: [String: Event] = [:]
+          for (_, eventJSON) in eventsJSON {
+            let event = Event(json: eventJSON)
+            //if the description already exists, merge them if possible
+            if let oldEvent = currentEvents[event.desc] as? Event {
+              if oldEvent.endDate == event.startDate {
+                event.startDate = oldEvent.startDate
+              } else if oldEvent.startDate == event.endDate {
+                event.endDate = oldEvent.endDate
+              } else {
+                //can't merge, uniquify descriptions
+                var counter = 1
+                let d = event.desc
+                while (currentEvents[d] != nil) {
+                  event.desc = d + " " + String(counter)
+                  counter++
+                }
+                counter = 1
+              }
             }
+            currentEvents[event.desc] = event
             
-            events[key] = currentEvents
+          }
+          
+          events[key] = currentEvents
         }
         
         // there is an array called diningItems in it
-        
+      
     }
-    
+  
     /**
      Tells if this Eatery is open at a specific time
-     
+   
      - parameter date: Specifically the time to check for
-     
+   
      - returns: true if this eatery has an event active at the given date and time
      
      - see: `isOpenForDate`
