@@ -14,19 +14,19 @@ import SwiftyJSON
  */
 public struct Event {
     /// Date and time that this event begins
-    public let startDate: NSDate
+    public internal(set) var startDate: NSDate
     
     /// Human-readable representation of `startDate`
     public let startDateFormatted: String
     
     /// Date and time that this event ends
-    public let endDate: NSDate
+    public internal(set) var endDate: NSDate
     
     /// Human-readable repersentation of `endDate`
     public let endDateFormatted: String
     
     /// Short description of the Event
-    public let desc: String
+    public internal(set) var desc: String
 
     /// Summary of the event
     public let summary: String

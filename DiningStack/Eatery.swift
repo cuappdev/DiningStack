@@ -198,9 +198,9 @@ public class Eatery: NSObject {
           
           var currentEvents: [String: Event] = [:]
           for (_, eventJSON) in eventsJSON {
-            let event = Event(json: eventJSON)
+            var event = Event(json: eventJSON)
             //if the description already exists, merge them if possible
-            if let oldEvent = currentEvents[event.desc] as? Event {
+            if let oldEvent = currentEvents[event.desc] {
               if oldEvent.endDate == event.startDate {
                 event.startDate = oldEvent.startDate
               } else if oldEvent.startDate == event.endDate {
@@ -211,7 +211,7 @@ public class Eatery: NSObject {
                 let d = event.desc
                 while (currentEvents[d] != nil) {
                   event.desc = d + " " + String(counter)
-                  counter++
+                  counter += 1
                 }
                 counter = 1
               }
