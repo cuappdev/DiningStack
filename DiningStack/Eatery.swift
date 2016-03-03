@@ -101,7 +101,7 @@ public class Eatery: NSObject {
     /// Campus names and open or closed names for sorting
     public static let campusNames = ["Central", "West", "North"]
     public static let openNames = ["Open", "Closed"]
-
+    
     /// Unique Identifier
     public let id: Int
     
@@ -193,45 +193,43 @@ public class Eatery: NSObject {
         let hoursJSON = json[APIKey.Hours.rawValue]
         
         for (_, hour) in hoursJSON {
-          let eventsJSON = hour[APIKey.Events.rawValue]
-          let key        = hour[APIKey.Date.rawValue].stringValue
-          
-          var currentEvents: [String: Event] = [:]
-          for (_, eventJSON) in eventsJSON {
-            var event = Event(json: eventJSON)
-            //if the description already exists, merge them if possible
-            if let oldEvent = currentEvents[event.desc] {
-              if oldEvent.endDate == event.startDate {
-                event.startDate = oldEvent.startDate
-              } else if oldEvent.startDate == event.endDate {
-                event.endDate = oldEvent.endDate
-              } else {
-                //can't merge, uniquify descriptions
-                var counter = 1
-                let d = event.desc
-                while (currentEvents[d] != nil) {
-                  event.desc = d + " " + String(counter)
-                  counter += 1
-                }
-                counter = 1
-              }
-            }
-            currentEvents[event.desc] = event
+            let eventsJSON = hour[APIKey.Events.rawValue]
+            let key        = hour[APIKey.Date.rawValue].stringValue
             
-          }
-          
-          events[key] = currentEvents
+            var currentEvents: [String: Event] = [:]
+            for (_, eventJSON) in eventsJSON {
+                var event = Event(json: eventJSON)
+                //if the description already exists, merge them if possible
+                if let oldEvent = currentEvents[event.desc] {
+                    if oldEvent.endDate == event.startDate {
+                        event.startDate = oldEvent.startDate
+                    } else if oldEvent.startDate == event.endDate {
+                        event.endDate = oldEvent.endDate
+                    } else {
+                        //can't merge, uniquify descriptions
+                        var counter = 1
+                        while (currentEvents[event.desc] != nil) {
+                            event.desc = event.desc + " " + String(counter)
+                            counter += 1
+                        }
+                    }
+                }
+                currentEvents[event.desc] = event
+                
+            }
+            
+            events[key] = currentEvents
         }
         
         // there is an array called diningItems in it
-      
+        
     }
-  
+    
     /**
      Tells if this Eatery is open at a specific time
-   
+     
      - parameter date: Specifically the time to check for
-   
+     
      - returns: true if this eatery has an event active at the given date and time
      
      - see: `isOpenForDate`
@@ -253,14 +251,14 @@ public class Eatery: NSObject {
     
     //
     /**
-    Tells if eatery is open within the calendar date given. This is distinct from `isOpenOnDate` in that it does not check a specific time, just the day, month, and year.
-    
-    - parameter date: The date to check
-    
-    - returns: true of there is an event active at some point within the given calendar day
-    
-    - see: `isOpenOnDate`
-    */
+     Tells if eatery is open within the calendar date given. This is distinct from `isOpenOnDate` in that it does not check a specific time, just the day, month, and year.
+     
+     - parameter date: The date to check
+     
+     - returns: true of there is an event active at some point within the given calendar day
+     
+     - see: `isOpenOnDate`
+     */
     public func isOpenForDate(date: NSDate) -> Bool {
         let events = eventsOnDate(date)
         return events.count != 0
