@@ -132,8 +132,12 @@ public class Eatery: NSObject {
     /// Acceptable types of payment
     public let paymentMethods: [PaymentType]
     
+    /// A menu of constant dining items. Exists if this eatery's menu
+    /// never changes. This should be used if it exists.
+    public var diningItems: [String: [MenuItem]]?
+    
     /// A constant hardcoded menu if this Eatery has one.
-    /// You should be using this menu for all events if it exists
+    /// This should be used if it exists yet diningItems does not.
     public let hardcodedMenu: [String: [MenuItem]]?
     
     /// GPS Location
@@ -191,6 +195,7 @@ public class Eatery: NSObject {
         }
         
         let hoursJSON = json[APIKey.Hours.rawValue]
+        var menuEmpty = true //will be set to false if any menu item is found in an event
         
         for (_, hour) in hoursJSON {
             let eventsJSON = hour[APIKey.Events.rawValue]
@@ -199,6 +204,9 @@ public class Eatery: NSObject {
             var currentEvents: [String: Event] = [:]
             for (_, eventJSON) in eventsJSON {
                 var event = Event(json: eventJSON)
+                if !event.menu.isEmpty {
+                    menuEmpty = false
+                }
                 //if the description already exists, merge them if possible
                 if let oldEvent = currentEvents[event.desc] {
                     if oldEvent.endDate == event.startDate {
@@ -221,7 +229,20 @@ public class Eatery: NSObject {
             events[key] = currentEvents
         }
         
-        // there is an array called diningItems in it
+        // Create diningItems if menu is empty
+        if menuEmpty {
+            let key = "General"
+            diningItems = [:]
+            diningItems![key] = []
+            for (_, item) in json[APIKey.DiningItems.rawValue] {
+                let menuItem = MenuItem(json: item)
+                diningItems![key]!.append(menuItem)
+            }
+            //Make nil if empty to fall back on hardcoded
+            if diningItems![key]!.isEmpty {
+                diningItems = nil
+            }
+        }
         
     }
     
@@ -328,21 +349,21 @@ public class Eatery: NSObject {
     }
     
     /**
-     Returns an iterable form of the entire hardcoded menu
+     Returns an iterable form of an entire menu
      
      - returns: a list of tuples in the form (category,[item list]).
      For each category we create a tuple containing the food category name as a string
      and the food items available for the category as a string list. Used to easily iterate
      over all items in the hardcoded menu. Ex: [("Entrees",["Chicken", "Steak", "Fish"]), ("Fruit", ["Apples"])]
      */
-    public func getHardcodeMenuIterable() -> [(String,[String])] {
+    private func getMenuIterable(menu: [String: [MenuItem]]?) -> [(String,[String])] {
         var iterableMenu:[(String,[String])] = []
-        if hardcodedMenu == nil {
+        if menu == nil {
             return []
         }
-        let keys = [String] (hardcodedMenu!.keys)
+        let keys = [String] (menu!.keys)
         for key in keys {
-            if let menuItems:[MenuItem] = hardcodedMenu![key] {
+            if let menuItems:[MenuItem] = menu![key] {
                 var menuList:[String] = []
                 for item in menuItems {
                     menuList.append(item.name)
@@ -354,6 +375,14 @@ public class Eatery: NSObject {
             }
         }
         return iterableMenu
+    }
+    
+    public func getHardcodeMenuIterable() -> [(String,[String])] {
+        return getMenuIterable(hardcodedMenu)
+    }
+    
+    public func getDiningItemMenuIterable() -> [(String,[String])] {
+        return getMenuIterable(diningItems)
     }
 
     public func sortMenu(menu: [String: [MenuItem]]) -> [(String, [MenuItem])] {

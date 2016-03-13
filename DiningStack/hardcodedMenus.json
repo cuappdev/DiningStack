@@ -1,5 +1,5 @@
 {
-    /*"Amit-Bhatia-Libe-Cafe": [
+    "Amit-Bhatia-Libe-Cafe": [
         {
             "items": [
                 {
@@ -24,7 +24,7 @@
                 },
                 {
                     "healthy": false,
-                    "item": "nSmoothies"
+                    "item": "Smoothies"
                 },
                 {
                     "healthy": false,
@@ -257,7 +257,7 @@
             ],
             "category": "General"
         }
-    ],*/
+    ],
     "Trillium": [
         {
             "category": "General",
@@ -340,7 +340,7 @@
                 }
             ]
         }
-    ],/*
+    ],
     "Bear-Necessities": [
         {
             "items": [
@@ -462,7 +462,7 @@
                 }
             ]
         }
-    ],*/
+    ],
     "Synapsis-Cafe": [
         {
             "category": "General",
@@ -533,7 +533,7 @@
                 }
             ]
         }
-    ]/*,
+    ],
     "Bears-Den": [
         {
             "items": [
@@ -915,5 +915,5 @@
             ],
             "category": "General"
         }
-    ]*/
+    ]
 }
