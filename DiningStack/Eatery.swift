@@ -384,6 +384,16 @@ public class Eatery: NSObject {
     public func getDiningItemMenuIterable() -> [(String,[String])] {
         return getMenuIterable(diningItems)
     }
+  
+    public func getAlternateMenuIterable() -> [(String, [String])] {
+        if diningItems != nil {
+            return getDiningItemMenuIterable()
+        } else if hardcodedMenu != nil {
+            return getHardcodeMenuIterable()
+        } else {
+            return []
+        }
+    }
 
     public func sortMenu(menu: [String: [MenuItem]]) -> [(String, [MenuItem])] {
         
