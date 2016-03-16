@@ -210,9 +210,13 @@ public class Eatery: NSObject {
                 //if the description already exists, merge them if possible
                 if let oldEvent = currentEvents[event.desc] {
                     if oldEvent.endDate == event.startDate {
-                        event.startDate = oldEvent.startDate
+                        var newEvent = oldEvent
+                        newEvent.endDate = event.endDate
+                        event = newEvent
                     } else if oldEvent.startDate == event.endDate {
-                        event.endDate = oldEvent.endDate
+                        var newEvent = oldEvent
+                        newEvent.startDate = event.startDate
+                        event = newEvent
                     } else {
                         //can't merge, uniquify descriptions
                         var counter = 1
