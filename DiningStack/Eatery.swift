@@ -356,25 +356,11 @@ public class Eatery: NSObject {
      and the food items available for the category as a string list. Used to easily iterate
      over all items in the hardcoded menu. Ex: [("Entrees",["Chicken", "Steak", "Fish"]), ("Fruit", ["Apples"])]
      */
-    private func getMenuIterable(menu: [String: [MenuItem]]?) -> [(String,[String])] {
-        var iterableMenu:[(String,[String])] = []
-        if menu == nil {
-            return []
-        }
-        let keys = [String] (menu!.keys)
-        for key in keys {
-            if let menuItems:[MenuItem] = menu![key] {
-                var menuList:[String] = []
-                for item in menuItems {
-                    menuList.append(item.name)
-                }
-                if menuList.count > 0 {
-                    let subMenu = (key,menuList)
-                    iterableMenu.append(subMenu)
-                }
-            }
-        }
-        return iterableMenu
+    private func getMenuIterable(menuList: [String: [MenuItem]]?) -> [(String,[String])] {
+        guard let menu = menuList else { return [] }
+        return menu.map({ (name, items) -> (String, [String]) in
+            (name, items.map({ ($0.name) }))
+        })
     }
     
     public func getHardcodeMenuIterable() -> [(String,[String])] {
