@@ -141,7 +141,7 @@ public class Eatery: NSObject {
     public let hardcodedMenu: [String: [MenuItem]]?
     
     /// GPS Location
-    let location: CLLocation
+    public let location: CLLocation
     
     // Maps 2015-03-01 to [Event]
     // Thought about using just an array, but
