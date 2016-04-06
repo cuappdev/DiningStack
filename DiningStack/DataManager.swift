@@ -108,9 +108,63 @@ enum DataError: ErrorType {
     case ServerError
 }
 
+public enum Date: Int {
+  case Sunday = 1
+  case Monday
+  case Tuesday
+  case Wednesday
+  case Thursday
+  case Friday
+  case Saturday
+  
+  init?(string: String) {
+    switch string.lowercaseString {
+    case "sunday":
+      self = .Sunday
+    case "monday":
+      self = .Monday
+    case "tuesday":
+      self = .Tuesday
+    case "wednesday":
+      self = .Wednesday
+    case "thursday":
+      self = .Thursday
+    case "friday":
+      self = .Friday
+    case "saturday":
+      self = .Saturday
+    default:
+      return nil
+    }
+  }
+  
+  func ofDateSpan(string: String) -> (Date, Date)? {
+    let partition = string.lowercaseString.characters.split{ $0 == "-" }.map(String.init)
+    guard let start = Date(string: partition[0]) else { return nil }
+    guard let end = Date(string: partition[1]) else { return nil }
+    return (start, end)
+  }
+  
+  /// Converts this Date and the given time string to an NSDate
+  ///      for example, if today is Monday 3/21/16
+  ///      then Tuesday.toTimeStamp(12:34 pm) = 3/22/16 12:30pm
+  func toTimeStamp(timeString: String) -> NSDate {
+    let startOfToday = NSCalendar.currentCalendar().startOfDayForDate(NSDate())
+    let weekDay = NSCalendar.currentCalendar().components(.Weekday, fromDate: NSDate()).weekday
+    let daysAway = (rawValue - weekDay + 7) % 7
+    let endDate = NSCalendar.currentCalendar().dateByAddingUnit(.Weekday, value: daysAway, toDate: startOfToday, options: []) ?? NSDate()
+    
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "h:mm a"
+    let timeIntoEndDate = formatter.dateFromString(timeString) ?? NSDate()
+    let components = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: timeIntoEndDate)
+    return NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: endDate, options: []) ?? NSDate()
+  }
+}
+
 /// Top-level class to communicate with Cornell Dining
 public class DataManager: NSObject {
-    
+  
     /// Gives a shared instance of `DataManager`
     public static let sharedInstance = DataManager()
     

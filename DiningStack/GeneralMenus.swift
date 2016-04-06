@@ -13,3 +13,4 @@ internal let kFrameworkBundle = NSBundle(forClass: DataManager.self)
 
 /// Hardcoded menus for those which would not normally have them
 internal let kEateryGeneralMenus = JSON(data: NSData(contentsOfURL: kFrameworkBundle.URLForResource("hardcodedMenus", withExtension: "json")!) ?? NSData()).dictionaryValue
+internal let kExternalEateries = JSON(data: NSData(contentsOfURL: kFrameworkBundle.URLForResource("externalEateries", withExtension: "json")!) ?? NSData()).dictionaryValue

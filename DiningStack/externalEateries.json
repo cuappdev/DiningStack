@@ -1,0 +1,66 @@
+{
+  "eateries": [
+               {
+               "slug": "CTB",
+               "name": "Collegetown Bagels",
+               "nameshort": "CTB",
+               "about" : "Blah blah blah",
+               "cornellDining": false,
+               "contactPhone": "123-456-7890",
+               "latitude": 42.412312,
+               "longitude": -76.12319,
+               "campusArea": {
+               "descr": "Collegetown",
+               "descrshort": "Ctown"
+               },
+               "operatingHours": [
+                                  {
+                                  "Sunday":
+                                  {
+                                  "events": [
+                                             {
+                                             "descr": "Breakfast",
+                                             "start": "8:00am",
+                                             "end": "11:00pm",
+                                             "menu": [
+                                                      {
+                                                      "item": "Bagel",
+                                                      "healthy": false
+                                                      }
+                                                      ]
+                                             }
+                                             ]
+                                  }
+                                  },
+                                  {
+                                  "saturday":
+                                  {
+                                  "events": [
+                                             {
+                                             "descr": "Breakfast",
+                                             "start": "8:00am",
+                                             "end": "11:00pm",
+                                             "menu": [
+                                                      {
+                                                      "item": "Bagel",
+                                                      "healthy": false
+                                                      }
+                                                      ]
+                                             }
+                                             ]
+                                  }
+                                  }
+                                  ],
+               "payMethods" : [
+                               {
+                               "descr": "Cash",
+                               "descrshort": "Cash"
+                               },
+                               {
+                               "descr": "Major Credit Cards (VISA, MasterCard, AMEX)",
+                               "descrshort": "Major Credit Cards"
+                               }
+                               ]
+               }
+               ]
+}
