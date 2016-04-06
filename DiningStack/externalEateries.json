@@ -15,8 +15,7 @@
                },
                "operatingHours": [
                                   {
-                                  "Sunday":
-                                  {
+                                  "weekday": "sunday",
                                   "events": [
                                              {
                                              "descr": "Breakfast",
@@ -30,11 +29,9 @@
                                                       ]
                                              }
                                              ]
-                                  }
                                   },
                                   {
-                                  "saturday":
-                                  {
+                                  "weekday": "saturday",
                                   "events": [
                                              {
                                              "descr": "Breakfast",
@@ -48,7 +45,6 @@
                                                       ]
                                              }
                                              ]
-                                  }
                                   }
                                   ],
                "payMethods" : [

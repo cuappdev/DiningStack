@@ -88,6 +88,10 @@ public enum APIKey : String {
     // Meta
     case Copyright = "copyright"
     case Timestamp = "responseDttm"
+  
+    // External
+    case External = "external"
+    case Weekday = "weekday"
 }
 
 /**
@@ -145,15 +149,23 @@ public enum Date: Int {
     return (start, end)
   }
   
-  /// Converts this Date and the given time string to an NSDate
-  ///      for example, if today is Monday 3/21/16
-  ///      then Tuesday.toTimeStamp(12:34 pm) = 3/22/16 12:30pm
-  func toTimeStamp(timeString: String) -> NSDate {
+  func getDate() -> NSDate {
     let startOfToday = NSCalendar.currentCalendar().startOfDayForDate(NSDate())
     let weekDay = NSCalendar.currentCalendar().components(.Weekday, fromDate: NSDate()).weekday
     let daysAway = (rawValue - weekDay + 7) % 7
     let endDate = NSCalendar.currentCalendar().dateByAddingUnit(.Weekday, value: daysAway, toDate: startOfToday, options: []) ?? NSDate()
-    
+    return endDate
+  }
+  
+  func getDateString() -> String {
+    let date = getDate()
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter.stringFromDate(date)
+  }
+  
+  func getTimeStamp(timeString: String) -> NSDate {
+    let endDate = getDate()
     let formatter = NSDateFormatter()
     formatter.dateFormat = "h:mm a"
     let timeIntoEndDate = formatter.dateFromString(timeString) ?? NSDate()
@@ -200,7 +212,9 @@ public class DataManager: NSObject {
             }
             
             let eateryList = json["data"]["eateries"]
+            let externalEateryList = kExternalEateries["eateries"]!
             self.eateries = eateryList.map { Eatery(json: $0.1) }
+            self.eateries += externalEateryList.map { Eatery(json: $0.1) }
             
             completion?(error: nil)
         }

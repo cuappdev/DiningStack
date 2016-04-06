@@ -196,14 +196,25 @@ public class Eatery: NSObject {
         
         let hoursJSON = json[APIKey.Hours.rawValue]
         var menuEmpty = true //will be set to false if any menu item is found in an event
-        
+      
         for (_, hour) in hoursJSON {
             let eventsJSON = hour[APIKey.Events.rawValue]
-            let key        = hour[APIKey.Date.rawValue].stringValue
+            var key        = hour[APIKey.Date.rawValue].stringValue
+            
+            let weekday = Date(string: json[APIKey.Weekday.rawValue].stringValue)
+            if let weekday = weekday {
+                key = weekday.getDateString() ?? key
+            }
             
             var currentEvents: [String: Event] = [:]
             for (_, eventJSON) in eventsJSON {
                 var event = Event(json: eventJSON)
+                
+                if let weekday = weekday {
+                    event.startDate = weekday.getTimeStamp(eventJSON[APIKey.StartFormat.rawValue].stringValue)
+                    event.endDate = weekday.getTimeStamp(eventJSON[APIKey.EndFormat.rawValue].stringValue)
+                }
+            
                 if !event.menu.isEmpty {
                     menuEmpty = false
                 }
