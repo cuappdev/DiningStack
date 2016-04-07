@@ -15,7 +15,7 @@
            },
            "operatingHours": [
                 {
-                    "weekday": "sunday",
+                    "weekday": "wednesday",
                     "events": [
                          {
                              "descr": "Breakfast",
@@ -31,7 +31,7 @@
                      ]
                 },
                 {
-                    "weekday": "saturday",
+                    "weekday": "thursday",
                     "events": [
                          {
                              "descr": "Breakfast",

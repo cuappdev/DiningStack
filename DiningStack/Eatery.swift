@@ -201,7 +201,7 @@ public class Eatery: NSObject {
             let eventsJSON = hour[APIKey.Events.rawValue]
             var key        = hour[APIKey.Date.rawValue].stringValue
             
-            let weekday = Date(string: json[APIKey.Weekday.rawValue].stringValue)
+            let weekday = Date(string: hour[APIKey.Weekday.rawValue].stringValue)
             if let weekday = weekday {
                 key = weekday.getDateString() ?? key
             }
