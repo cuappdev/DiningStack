@@ -167,7 +167,7 @@ public enum Date: Int {
   func getTimeStamp(timeString: String) -> NSDate {
     let endDate = getDate()
     let formatter = NSDateFormatter()
-    formatter.dateFormat = "h:mm a"
+    formatter.dateFormat = "h:mma"
     let timeIntoEndDate = formatter.dateFromString(timeString) ?? NSDate()
     let components = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: timeIntoEndDate)
     return NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: endDate, options: []) ?? NSDate()
