@@ -15,16 +15,25 @@
            },
            "operatingHours": [
                 {
-                    "weekday": "wednesday",
+                    "weekday": "saturday",
                     "events": [
                          {
                              "descr": "Breakfast",
                              "start": "8:00am",
-                             "end": "11:00pm",
+                             "end": "11:59pm",
                              "menu": [
                                   {
-                                      "item": "Bagel",
-                                      "healthy": false
+                                      "category": "General",
+                                      "items": [
+                                          {
+                                              "item": "Sausage egg and cheese",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Plain Bagel",
+                                              "healthy": true
+                                          }
+                                      ]
                                   }
                               ]
                          }
@@ -39,13 +48,18 @@
                              "end": "11:00pm",
                              "menu": [
                                   {
-                                      "item": "Bagel",
-                                      "healthy": false
+                                      "category": "General",
+                                      "items": [
+                                          {
+                                              "item": "Sausage egg and cheese",
+                                              "healthy": false
+                                          }
+                                      ]
                                   }
                               ]
                          }
                      ]
-                },
+                }
             ],
            "payMethods" : [
                 {
