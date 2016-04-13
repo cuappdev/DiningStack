@@ -90,7 +90,6 @@ public enum APIKey : String {
     case Timestamp = "responseDttm"
   
     // External
-    case External = "external"
     case Weekday = "weekday"
 }
 
@@ -142,11 +141,26 @@ public enum Date: Int {
     }
   }
   
-  func ofDateSpan(string: String) -> (Date, Date)? {
+  static func ofDateSpan(string: String) -> [Date]? {
     let partition = string.lowercaseString.characters.split{ $0 == "-" }.map(String.init)
-    guard let start = Date(string: partition[0]) else { return nil }
-    guard let end = Date(string: partition[1]) else { return nil }
-    return (start, end)
+    switch partition.count {
+    case 2:
+      guard let start = Date(string: partition[0]) else { return nil }
+      guard let end = Date(string: partition[1]) else { return nil }
+      var result: [Date] = []
+      let startValue = start.rawValue <= end.rawValue ? start.rawValue : end.rawValue
+      let endValue = start.rawValue <= end.rawValue ? end.rawValue : start.rawValue
+      for dayValue in startValue...endValue {
+        guard let day = Date(rawValue: dayValue) else { return nil }
+        result.append(day)
+      }
+      return result
+    case 1:
+      guard let start = Date(string: partition[0]) else { return nil }
+      return [start]
+    default:
+      return nil
+    }
   }
   
   func getDate() -> NSDate {

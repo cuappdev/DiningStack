@@ -199,22 +199,13 @@ public class Eatery: NSObject {
       
         for (_, hour) in hoursJSON {
             let eventsJSON = hour[APIKey.Events.rawValue]
-            var key        = hour[APIKey.Date.rawValue].stringValue
-            
-            let weekday = Date(string: hour[APIKey.Weekday.rawValue].stringValue)
-            if let weekday = weekday {
-                key = weekday.getDateString() ?? key
-            }
+            let key        = hour[APIKey.Date.rawValue].stringValue
             
             var currentEvents: [String: Event] = [:]
+            var eventTimes: [String: (String, String)] = [:]
             for (_, eventJSON) in eventsJSON {
                 var event = Event(json: eventJSON)
                 
-                if let weekday = weekday {
-                    event.startDate = weekday.getTimeStamp(eventJSON[APIKey.StartFormat.rawValue].stringValue)
-                    event.endDate = weekday.getTimeStamp(eventJSON[APIKey.EndFormat.rawValue].stringValue)
-                }
-            
                 if !event.menu.isEmpty {
                     menuEmpty = false
                 }
@@ -238,9 +229,21 @@ public class Eatery: NSObject {
                     }
                 }
                 currentEvents[event.desc] = event
-                
+                eventTimes[event.desc] = (eventJSON[APIKey.StartFormat.rawValue].stringValue, eventJSON[APIKey.EndFormat.rawValue].stringValue)
             }
             
+            
+            let weekdays = Date.ofDateSpan(hour[APIKey.Weekday.rawValue].stringValue)
+            for weekday in weekdays ?? [] {
+                let weekdayKey = weekday.getDateString()
+                let currentEventsCopy = currentEvents
+                for (_, var event) in currentEventsCopy {
+                    event.startDate = weekday.getTimeStamp(eventTimes[event.desc]!.0)
+                    event.endDate = weekday.getTimeStamp(eventTimes[event.desc]!.1)
+                }
+                events[weekdayKey] = currentEventsCopy
+            }
+          
             events[key] = currentEvents
         }
         
