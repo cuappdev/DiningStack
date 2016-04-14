@@ -88,6 +88,9 @@ public enum APIKey : String {
     // Meta
     case Copyright = "copyright"
     case Timestamp = "responseDttm"
+  
+    // External
+    case Weekday = "weekday"
 }
 
 /**
@@ -108,9 +111,85 @@ enum DataError: ErrorType {
     case ServerError
 }
 
+public enum Date: Int {
+  case Sunday = 0
+  case Monday
+  case Tuesday
+  case Wednesday
+  case Thursday
+  case Friday
+  case Saturday
+  
+  init?(string: String) {
+    switch string.lowercaseString {
+    case "sunday":
+      self = .Sunday
+    case "monday":
+      self = .Monday
+    case "tuesday":
+      self = .Tuesday
+    case "wednesday":
+      self = .Wednesday
+    case "thursday":
+      self = .Thursday
+    case "friday":
+      self = .Friday
+    case "saturday":
+      self = .Saturday
+    default:
+      return nil
+    }
+  }
+  
+  static func ofDateSpan(string: String) -> [Date]? {
+    let partition = string.lowercaseString.characters.split{ $0 == "-" }.map(String.init)
+    switch partition.count {
+    case 2:
+      guard let start = Date(string: partition[0]) else { return nil }
+      guard let end = Date(string: partition[1]) else { return nil }
+      var result: [Date] = []
+      let endValue = start.rawValue <= end.rawValue ? end.rawValue : end.rawValue + 7
+      for dayValue in start.rawValue...endValue {
+        guard let day = Date(rawValue: dayValue % 7) else { return nil }
+        result.append(day)
+      }
+      return result
+    case 1:
+      guard let start = Date(string: partition[0]) else { return nil }
+      return [start]
+    default:
+      return nil
+    }
+  }
+  
+  func getDate() -> NSDate {
+    let startOfToday = NSCalendar.currentCalendar().startOfDayForDate(NSDate())
+    let weekDay = NSCalendar.currentCalendar().components(.Weekday, fromDate: NSDate()).weekday
+    let daysAway = (rawValue - weekDay + 7) % 7
+    let endDate = NSCalendar.currentCalendar().dateByAddingUnit(.Weekday, value: daysAway, toDate: startOfToday, options: []) ?? NSDate()
+    return endDate
+  }
+  
+  func getDateString() -> String {
+    let date = getDate()
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter.stringFromDate(date)
+  }
+  
+  func getTimeStamp(timeString: String) -> NSDate {
+    let endDate = getDate()
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "h:mma"
+    let timeIntoEndDate = formatter.dateFromString(timeString) ?? NSDate()
+    let components = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: timeIntoEndDate)
+    return NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: endDate, options: []) ?? NSDate()
+  }
+}
+
 /// Top-level class to communicate with Cornell Dining
 public class DataManager: NSObject {
-    
+  
     /// Gives a shared instance of `DataManager`
     public static let sharedInstance = DataManager()
     
@@ -146,7 +225,9 @@ public class DataManager: NSObject {
             }
             
             let eateryList = json["data"]["eateries"]
+            let externalEateryList = kExternalEateries["eateries"]!
             self.eateries = eateryList.map { Eatery(json: $0.1) }
+            self.eateries += externalEateryList.map { Eatery(json: $0.1) }
             
             completion?(error: nil)
         }
