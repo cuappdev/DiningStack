@@ -112,7 +112,7 @@ enum DataError: ErrorType {
 }
 
 public enum Date: Int {
-  case Sunday = 1
+  case Sunday = 0
   case Monday
   case Tuesday
   case Wednesday
@@ -148,10 +148,9 @@ public enum Date: Int {
       guard let start = Date(string: partition[0]) else { return nil }
       guard let end = Date(string: partition[1]) else { return nil }
       var result: [Date] = []
-      let startValue = start.rawValue <= end.rawValue ? start.rawValue : end.rawValue
-      let endValue = start.rawValue <= end.rawValue ? end.rawValue : start.rawValue
-      for dayValue in startValue...endValue {
-        guard let day = Date(rawValue: dayValue) else { return nil }
+      let endValue = start.rawValue <= end.rawValue ? end.rawValue : end.rawValue + 7
+      for dayValue in start.rawValue...endValue {
+        guard let day = Date(rawValue: dayValue % 7) else { return nil }
         result.append(day)
       }
       return result

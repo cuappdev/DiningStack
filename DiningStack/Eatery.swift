@@ -236,14 +236,16 @@ public class Eatery: NSObject {
             let weekdays = Date.ofDateSpan(hour[APIKey.Weekday.rawValue].stringValue)
             for weekday in weekdays ?? [] {
                 let weekdayKey = weekday.getDateString()
-                let currentEventsCopy = currentEvents
-                for (_, var event) in currentEventsCopy {
-                    event.startDate = weekday.getTimeStamp(eventTimes[event.desc]!.0)
-                    event.endDate = weekday.getTimeStamp(eventTimes[event.desc]!.1)
+                var currentEventsCopy: [String: Event] = [:]
+                for (_, event) in currentEvents {
+                    var eventCopy = event
+                    eventCopy.startDate = weekday.getTimeStamp(eventTimes[event.desc]!.0)
+                    eventCopy.endDate = weekday.getTimeStamp(eventTimes[event.desc]!.1)
+                    currentEventsCopy[event.desc] = eventCopy
                 }
                 events[weekdayKey] = currentEventsCopy
             }
-          
+            
             events[key] = currentEvents
         }
         
