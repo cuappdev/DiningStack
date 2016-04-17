@@ -1,5 +1,1418 @@
 {
     "eateries": [
-        
+        {
+           "slug": "Terrace",
+           "name": "The Terrace",
+           "nameshort": "Terrace",
+           "about" : "",
+           "cornellDining": false,
+           "contactPhone": "1-800-541-2501",
+           "latitude": 42.412312,
+           "longitude": -76.12319,
+           "campusArea": {
+               "descr": "Central Campus",
+               "descrshort": "Central"
+           },
+           "operatingHours": [
+                {
+                    "weekday": "monday-friday",
+                    "events": [
+                         {
+                             "descr": "Lunch",
+                             "start": "10:30am",
+                             "end": "2:30pm",
+                             "menu": [
+                                  {
+                                      "category": "Salads",
+                                      "items": [
+                                          {
+                                              "item": "Salads",
+                                              "healthy": true
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "category": "Burritos",
+                                      "items": [
+                                          {
+                                              "item": "Burrito bowl",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Burrito",
+                                              "healthy": true
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "category": "Grill",
+                                      "items": [
+                                          {
+                                              "item": "Burgers",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Chicken tenders",
+                                              "healthy": false
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "category": "Pho",
+                                      "items": [
+                                          {
+                                              "item": "Pho",
+                                              "healthy": false
+                                          }
+                                      ]
+                                  }
+                              ]
+                         }
+                     ]
+                },
+            ],
+           "payMethods" : [
+                {
+                    "descr": "Cash",
+                    "descrshort": "Cash"
+                },
+                {
+                    "descr": "Major Credit Cards (VISA, MasterCard, AMEX)",
+                    "descrshort": "Major Credit Cards"
+                },
+                {
+                    "descr": "Meal Plan - Debit Plans (Big Red Bucks, Meal Choice, etc)",
+                    "descrshort": "Meal Plan - Debit"
+                }
+            ]
+        },
+        {
+           "slug": "Macs",
+           "name": "Mac’s Café ",
+           "nameshort": "Mac's",
+           "about" : "",
+           "cornellDining": false,
+           "contactPhone": "1-800-541-2501",
+           "latitude": 42.412312,
+           "longitude": -76.12319,
+           "campusArea": {
+               "descr": "Central Campus",
+               "descrshort": "Central"
+           },
+           "operatingHours": [
+                {
+                    "weekday": "monday-friday",
+                    "events": [
+                         {
+                             "descr": "Lunch",
+                             "start": "10:30am",
+                             "end": "2:30pm",
+                             "menu": [
+                                  {
+                                      "category": "General",
+                                      "items": [
+                                          {
+                                              "item": "Sandwiches",
+                                              "healthy": false
+                                          }
+                                      ]
+                                  }
+                              ]
+                         }
+                     ]
+                },
+            ],
+           "payMethods" : [
+                {
+                    "descr": "Cash",
+                    "descrshort": "Cash"
+                },
+                {
+                    "descr": "Major Credit Cards (VISA, MasterCard, AMEX)",
+                    "descrshort": "Major Credit Cards"
+                },
+                {
+                    "descr": "Meal Plan - Debit Plans (Big Red Bucks, Meal Choice, etc)",
+                    "descrshort": "Meal Plan - Debit"
+                }
+            ]
+        },
+        {
+           "slug": "Manndible",
+           "name": "Manndible Café",
+           "nameshort": "Manndile",
+           "about" : "Manndible Cafe is not your average eatery. There’s something different about this menu: sandwiches with chicken raised around the corner, the perfect cup of coffee roasted that morning down the hill, a fresh organic salad grown across campus, a vegan dessert so rich you’d never guess it had no dairy or eggs, and to finish it off- you can toss your plate and cup into a compost bin instead of a trash can.",
+           "cornellDining": false,
+           "contactPhone": "607-254-6206",
+           "latitude": 42.412312,
+           "longitude": -76.12319,
+           "campusArea": {
+               "descr": "Central Campus",
+               "descrshort": "Central"
+           },
+           "operatingHours": [
+                {
+                    "weekday": "monday-wednesday",
+                    "events": [
+                         {
+                             "descr": "General",
+                             "start": "7:30am",
+                             "end": "10:00pm",
+                             "menu": [
+                                  {
+                                      "category": "Breakfast",
+                                      "items": [
+                                          {
+                                              "item": "Bagels",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Tofu Scramble",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Yogurt",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Manndible made Granola",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Muffins",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Scones",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Quick Breads",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Apricot Breakfast Bars",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "PrOats",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Fresh Fruit",
+                                              "healthy": true
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "category": "Burrito Bar",
+                                      "items": [
+                                          {
+                                              "item": "Black Beans",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Chicken in Yucatan Sauce",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Organic Brown Rice in a Cilantro Pesto",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Mixed Sautéed Veggies",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Cheddar Cheese",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Fingerlakes Fresh Lettuce",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Roasted Homemade Salsa",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Ralph's Hot Sauce",
+                                              "healthy": false
+                                          },
+                                      ]
+                                    },
+                                    { 
+                                        "category": "Soup",
+                                        "items": [
+                                            {
+                                              "item": "Beef Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lentil Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Thai Coconut",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Potato Leek",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Corn Chowder",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Cheddar Broccoli",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Ready-To-Eat",
+                                        "items": [
+                                            {
+                                              "item": "Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Soba Noodle Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Macaroni & Cheese",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Peanut Lime Noodles",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Bowtie Pasta and Chicken",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lasagna",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Sandwiches & Wraps",
+                                        "items": [
+                                            {
+                                              "item": "Chicken Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Roasted Turkey",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Baked Tofu",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Seitan",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Snacks",
+                                        "items": [
+                                            {
+                                              "item": "Toffee Walnut Bark",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Deepwater & Dirty Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Stacey's Pita Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Kind & Luna Bars",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Trail Mix",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Yogurt-Covered Pretzels",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Nuts",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Drinks",
+                                        "items": [
+                                            {
+                                              "item": "Cofee Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Hot Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Iced Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Cold Drinks",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Desserts",
+                                        "items": [
+                                            {
+                                              "item": "Baked Goods",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Candy",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    }
+                              ]
+                        },
+                    ]
+                },
+                {
+                    "weekday": "thursday",
+                    "events": [
+                         {
+                             "descr": "General",
+                             "start": "7:30am",
+                             "end": "9:00pm",
+                             "menu": [
+                                  {
+                                      "category": "Breakfast",
+                                      "items": [
+                                          {
+                                              "item": "Bagels",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Tofu Scramble",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Yogurt",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Manndible made Granola",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Muffins",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Scones",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Quick Breads",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Apricot Breakfast Bars",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "PrOats",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Fresh Fruit",
+                                              "healthy": true
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "category": "Burrito Bar",
+                                      "items": [
+                                          {
+                                              "item": "Black Beans",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Chicken in Yucatan Sauce",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Organic Brown Rice in a Cilantro Pesto",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Mixed Sautéed Veggies",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Cheddar Cheese",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Fingerlakes Fresh Lettuce",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Roasted Homemade Salsa",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Ralph's Hot Sauce",
+                                              "healthy": false
+                                          },
+                                      ]
+                                    },
+                                    { 
+                                        "category": "Soup",
+                                        "items": [
+                                            {
+                                              "item": "Beef Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lentil Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Thai Coconut",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Potato Leek",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Corn Chowder",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Cheddar Broccoli",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Ready-To-Eat",
+                                        "items": [
+                                            {
+                                              "item": "Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Soba Noodle Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Macaroni & Cheese",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Peanut Lime Noodles",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Bowtie Pasta and Chicken",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lasagna",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Sandwiches & Wraps",
+                                        "items": [
+                                            {
+                                              "item": "Chicken Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Roasted Turkey",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Baked Tofu",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Seitan",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Snacks",
+                                        "items": [
+                                            {
+                                              "item": "Toffee Walnut Bark",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Deepwater & Dirty Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Stacey's Pita Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Kind & Luna Bars",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Trail Mix",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Yogurt-Covered Pretzels",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Nuts",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Drinks",
+                                        "items": [
+                                            {
+                                              "item": "Cofee Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Hot Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Iced Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Cold Drinks",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Desserts",
+                                        "items": [
+                                            {
+                                              "item": "Baked Goods",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Candy",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    }
+                              ]
+                        },
+                    ]
+                },
+                {
+                    "weekday": "friday",
+                    "events": [
+                         {
+                             "descr": "General",
+                             "start": "7:30am",
+                             "end": "5:00pm",
+                             "menu": [
+                                  {
+                                      "category": "Breakfast",
+                                      "items": [
+                                          {
+                                              "item": "Bagels",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Tofu Scramble",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Yogurt",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Manndible made Granola",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Muffins",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Scones",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Quick Breads",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Apricot Breakfast Bars",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "PrOats",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Fresh Fruit",
+                                              "healthy": true
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "category": "Curry Bar",
+                                      "items": [
+                                          {
+                                              "item": "Korma Chicken",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Curried Tofu",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Basmati Rice",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Mung Bean Dahl",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Yogurt Raita",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Ginger Hot Sauce",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Naan",
+                                              "healthy": false
+                                          }
+                                      ]
+                                    },
+                                    { 
+                                        "category": "Soup",
+                                        "items": [
+                                            {
+                                              "item": "Beef Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lentil Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Thai Coconut",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Potato Leek",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Corn Chowder",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Cheddar Broccoli",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Ready-To-Eat",
+                                        "items": [
+                                            {
+                                              "item": "Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Soba Noodle Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Macaroni & Cheese",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Peanut Lime Noodles",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Bowtie Pasta and Chicken",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lasagna",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Sandwiches & Wraps",
+                                        "items": [
+                                            {
+                                              "item": "Chicken Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Roasted Turkey",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Baked Tofu",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Seitan",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Snacks",
+                                        "items": [
+                                            {
+                                              "item": "Toffee Walnut Bark",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Deepwater & Dirty Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Stacey's Pita Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Kind & Luna Bars",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Trail Mix",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Yogurt-Covered Pretzels",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Nuts",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Drinks",
+                                        "items": [
+                                            {
+                                              "item": "Cofee Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Hot Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Iced Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Cold Drinks",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Desserts",
+                                        "items": [
+                                            {
+                                              "item": "Baked Goods",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Candy",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    }
+                              ]
+                        },
+                    ]
+                },
+                {
+                    "weekday": "saturday",
+                    "events": [
+                         {
+                             "descr": "General",
+                             "start": "11:00am",
+                             "end": "5:00pm",
+                             "menu": [
+                                  {
+                                      "category": "Breakfast",
+                                      "items": [
+                                          {
+                                              "item": "Bagels",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Tofu Scramble",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Yogurt",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Manndible made Granola",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Muffins",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Scones",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Quick Breads",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Apricot Breakfast Bars",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "PrOats",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Fresh Fruit",
+                                              "healthy": true
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "category": "Burrito Bar",
+                                      "items": [
+                                          {
+                                              "item": "Black Beans",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Chicken in Yucatan Sauce",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Organic Brown Rice in a Cilantro Pesto",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Mixed Sautéed Veggies",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Cheddar Cheese",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Fingerlakes Fresh Lettuce",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Roasted Homemade Salsa",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Ralph's Hot Sauce",
+                                              "healthy": false
+                                          },
+                                      ]
+                                    },
+                                    { 
+                                        "category": "Soup",
+                                        "items": [
+                                            {
+                                              "item": "Beef Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lentil Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Thai Coconut",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Potato Leek",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Corn Chowder",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Cheddar Broccoli",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Ready-To-Eat",
+                                        "items": [
+                                            {
+                                              "item": "Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Soba Noodle Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Macaroni & Cheese",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Peanut Lime Noodles",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Bowtie Pasta and Chicken",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lasagna",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Sandwiches & Wraps",
+                                        "items": [
+                                            {
+                                              "item": "Chicken Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Roasted Turkey",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Baked Tofu",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Seitan",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Snacks",
+                                        "items": [
+                                            {
+                                              "item": "Toffee Walnut Bark",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Deepwater & Dirty Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Stacey's Pita Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Kind & Luna Bars",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Trail Mix",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Yogurt-Covered Pretzels",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Nuts",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Drinks",
+                                        "items": [
+                                            {
+                                              "item": "Cofee Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Hot Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Iced Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Cold Drinks",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Desserts",
+                                        "items": [
+                                            {
+                                              "item": "Baked Goods",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Candy",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    }
+                              ]
+                        },
+                    ]
+                },
+                {
+                    "weekday": "sunday",
+                    "events": [
+                         {
+                             "descr": "General",
+                             "start": "11:00am",
+                             "end": "10:00pm",
+                             "menu": [
+                                  {
+                                      "category": "Breakfast",
+                                      "items": [
+                                          {
+                                              "item": "Bagels",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Tofu Scramble",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Yogurt",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Manndible made Granola",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Muffins",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Scones",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Quick Breads",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Apricot Breakfast Bars",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "PrOats",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Fresh Fruit",
+                                              "healthy": true
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "category": "Burrito Bar",
+                                      "items": [
+                                          {
+                                              "item": "Black Beans",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Chicken in Yucatan Sauce",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Organic Brown Rice in a Cilantro Pesto",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Mixed Sautéed Veggies",
+                                              "healthy": true
+                                          },
+                                          {
+                                              "item": "Cheddar Cheese",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Fingerlakes Fresh Lettuce",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Roasted Homemade Salsa",
+                                              "healthy": false
+                                          },
+                                          {
+                                              "item": "Ralph's Hot Sauce",
+                                              "healthy": false
+                                          },
+                                      ]
+                                    },
+                                    { 
+                                        "category": "Soup",
+                                        "items": [
+                                            {
+                                              "item": "Beef Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lentil Chili",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Thai Coconut",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Potato Leek",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Corn Chowder",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Cheddar Broccoli",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Ready-To-Eat",
+                                        "items": [
+                                            {
+                                              "item": "Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Soba Noodle Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Macaroni & Cheese",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Peanut Lime Noodles",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Bowtie Pasta and Chicken",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Lasagna",
+                                              "healthy": false
+                                            },
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Sandwiches & Wraps",
+                                        "items": [
+                                            {
+                                              "item": "Chicken Salad",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Roasted Turkey",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Baked Tofu",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Seitan",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Snacks",
+                                        "items": [
+                                            {
+                                              "item": "Toffee Walnut Bark",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Deepwater & Dirty Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Stacey's Pita Chips",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Kind & Luna Bars",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Trail Mix",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Yogurt-Covered Pretzels",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Nuts",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Drinks",
+                                        "items": [
+                                            {
+                                              "item": "Cofee Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Hot Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Iced Drinks",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "More Cold Drinks",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        "category": "Desserts",
+                                        "items": [
+                                            {
+                                              "item": "Baked Goods",
+                                              "healthy": false
+                                            },
+                                            {
+                                              "item": "Candy",
+                                              "healthy": false
+                                            }
+                                        ]
+                                    }
+                              ]
+                        },
+                    ]
+                }
+            ],
+           "payMethods" : [
+                {
+                    "descr": "Cash",
+                    "descrshort": "Cash"
+                },
+                {
+                    "descr": "Major Credit Cards (VISA, MasterCard, AMEX)",
+                    "descrshort": "Major Credit Cards"
+                },
+                {
+                    "descr": "Meal Plan - Debit Plans (Big Red Bucks, Meal Choice, etc)",
+                    "descrshort": "Meal Plan - Debit"
+                }
+            ]
+        },
+        {
+           "slug": "Zeus",
+           "name": "Temple of Zeus",
+           "nameshort": "Temple of Zeus",
+           "about" : "",
+           "cornellDining": false,
+           "contactPhone": "",
+           "latitude": 42.412312,
+           "longitude": -76.12319,
+           "campusArea": {
+               "descr": "Central Campus",
+               "descrshort": "Central"
+           },
+           "operatingHours": [
+                {
+                    "weekday": "monday-friday",
+                    "events": [
+                         {
+                             "descr": "General",
+                             "start": "10:30am",
+                             "end": "2:30pm",
+                             "menu": [
+                                  {
+                                      "category": "General",
+                                      "items": [
+                                          {
+                                              "item": "Soups",
+                                              "healthy": true
+                                          }
+                                      ]
+                                  }
+                              ]
+                         }
+                     ]
+                },
+            ],
+           "payMethods" : [
+                {
+                    "descr": "Cash",
+                    "descrshort": "Cash"
+                },
+                {
+                    "descr": "Major Credit Cards (VISA, MasterCard, AMEX)",
+                    "descrshort": "Major Credit Cards"
+                },
+                {
+                    "descr": "Meal Plan - Debit Plans (Big Red Bucks, Meal Choice, etc)",
+                    "descrshort": "Meal Plan - Debit"
+                }
+            ]
+        },
     ]
 }
