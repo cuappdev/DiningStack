@@ -152,6 +152,9 @@ public class Eatery: NSObject {
     /// [ "2015-03-01": ["Lunch": Event]]
     private(set) var events: [String: [String: Event]] = [:]
     
+    /// ="This is an external eatery, i.e. a completely hardcoded eatery"
+    public let external: Bool
+    
     // Gives a string full of all the menus for this eatery today
     // this is used for searching.
     private var _todaysEventsString: String? = nil
@@ -177,6 +180,7 @@ public class Eatery: NSObject {
         slug  = json[APIKey.Slug.rawValue].stringValue
         about = json[APIKey.AboutShort.rawValue].stringValue
         phone = json[APIKey.PhoneNumber.rawValue].stringValue
+        external = json[APIKey.External.rawValue].boolValue
         
         //TODO: make the below line safe
         area     = Area(rawValue: json[APIKey.CampusArea.rawValue][APIKey.ShortDescription.rawValue].stringValue) ?? .Unknown

@@ -90,7 +90,8 @@ public enum APIKey : String {
     case Timestamp = "responseDttm"
   
     // External
-    case Weekday = "weekday"
+    case Weekday  = "weekday"
+    case External = "external"
 }
 
 /**
@@ -227,7 +228,14 @@ public class DataManager: NSObject {
             let eateryList = json["data"]["eateries"]
             let externalEateryList = kExternalEateries["eateries"]!
             self.eateries = eateryList.map { Eatery(json: $0.1) }
-            self.eateries += externalEateryList.map { Eatery(json: $0.1) }
+            let externalEateries = externalEateryList.map { Eatery(json: $0.1) }
+            //don't add duplicate external eateries
+            for external in externalEateries {
+                if !eateries.contains({ $0.slug == external.slug }) {
+                    eateries.append(external)
+                }
+            }
+            
             
             completion?(error: nil)
         }
