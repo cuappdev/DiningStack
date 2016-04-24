@@ -225,7 +225,7 @@ public class DataManager: NSObject {
                 return
             }
             
-            let eateryList = json["data"]["eateries"]
+            let eateryList = json["data"]["eateries"].filter { return $0.1["name"] != "Hot Dog Cart" }
             let externalEateryList = kExternalEateries["eateries"]!
             self.eateries = eateryList.map { Eatery(json: $0.1) }
             let externalEateries = externalEateryList.map { Eatery(json: $0.1) }
