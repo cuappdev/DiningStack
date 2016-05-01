@@ -113,7 +113,7 @@ enum DataError: ErrorType {
 }
 
 public enum Date: Int {
-  case Sunday = 0
+  case Sunday = 1
   case Monday
   case Tuesday
   case Wednesday
