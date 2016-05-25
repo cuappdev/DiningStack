@@ -225,17 +225,19 @@ public class DataManager: NSObject {
                 return
             }
             
-            let eateryList = json["data"]["eateries"].filter { return $0.1["name"] != "Hot Dog Cart" }
+            let eateryList = json["data"]["eateries"]
             let externalEateryList = kExternalEateries["eateries"]!
             self.eateries = eateryList.map { Eatery(json: $0.1) }
             let externalEateries = externalEateryList.map { Eatery(json: $0.1) }
             //don't add duplicate external eateries
+            //Uncomment after CU Dining Pushes Eatery with marketing
+            /*
             for external in externalEateries {
                 if !eateries.contains({ $0.slug == external.slug }) {
                     eateries.append(external)
                 }
             }
-            
+            */
             
             completion?(error: nil)
         }
