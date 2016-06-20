@@ -87,8 +87,8 @@ public enum Area: String {
     case Central = "Central"
 }
 
-private func makeFormatter () -> NSDateFormatter {
-    let formatter = NSDateFormatter()
+private func makeFormatter () -> DateFormatter {
+    let formatter = DateFormatter()
     formatter.dateFormat = "YYYY-MM-dd"
     return formatter
 }
@@ -159,12 +159,12 @@ public class Eatery: NSObject {
             if let _todaysEventsString = _todaysEventsString {
                 return _todaysEventsString
             }
-            let ar = Array(eventsOnDate(NSDate()).values)
+            let ar = Array(eventsOnDate(Foundation.Date()).values)
             let strings = ar.map { (ev: Event) -> String in
                 ev.menu.description
             }
             
-            _todaysEventsString = strings.joinWithSeparator("\n")
+            _todaysEventsString = strings.joined(separator: "\n")
             return _todaysEventsString!
         }
     }
@@ -275,8 +275,8 @@ public class Eatery: NSObject {
      
      - see: `isOpenForDate`
      */
-    public func isOpenOnDate(date: NSDate) -> Bool {
-        let yesterday = NSDate(timeInterval: -1 * 24 * 60 * 60, sinceDate: date)
+    public func isOpenOnDate(_ date: Foundation.Date) -> Bool {
+        let yesterday = Foundation.Date(timeInterval: -1 * 24 * 60 * 60, since: date)
         
         for now in [date, yesterday] {
             let events = eventsOnDate(now)
@@ -300,7 +300,7 @@ public class Eatery: NSObject {
      
      - see: `isOpenOnDate`
      */
-    public func isOpenForDate(date: NSDate) -> Bool {
+    public func isOpenForDate(_ date: Foundation.Date) -> Bool {
         let events = eventsOnDate(date)
         return events.count != 0
     }
@@ -311,7 +311,7 @@ public class Eatery: NSObject {
      - returns: true if the eatery is open at the present date and time
      */
     public func isOpenNow() -> Bool {
-        return isOpenOnDate(NSDate())
+        return isOpenOnDate(Foundation.Date())
     }
     
     /**
@@ -320,7 +320,7 @@ public class Eatery: NSObject {
      - returns: true if the eatery will be open at some point today or was already open
      */
     public func isOpenToday() -> Bool {
-        return isOpenForDate(NSDate())
+        return isOpenForDate(Foundation.Date())
     }
     
     /**
@@ -330,8 +330,8 @@ public class Eatery: NSObject {
      
      - returns: A mapping from Event Name to Event for the given day.
      */
-    public func eventsOnDate(date: NSDate) -> [String: Event] {
-        let dateString = Eatery.dateFormatter.stringFromDate(date)
+    public func eventsOnDate(_ date: Foundation.Date) -> [String: Event] {
+        let dateString = Eatery.dateFormatter.string(from: date)
         return events[dateString] ?? [:]
     }
     
@@ -344,9 +344,9 @@ public class Eatery: NSObject {
      For our purposes, "active" means currently running or will run soon. As in, if there
      was no event running at exactly the date given but there will be one 15 minutes afterwards, that event would be returned. If the next event was over a day away, nil would be returned.
      */
-    public func activeEventForDate(date: NSDate) -> Event? {
-        let yesterday = NSDate(timeInterval: (-24 * 60 * 60), sinceDate: date)
-        let tomorrow = NSDate(timeInterval: 24 * 60 * 60, sinceDate: date)
+    public func activeEventForDate(_ date: Foundation.Date) -> Event? {
+        let yesterday = Foundation.Date(timeInterval: (-24 * 60 * 60), since: date)
+        let tomorrow = Foundation.Date(timeInterval: 24 * 60 * 60, since: date)
         
         var timeDifference = DBL_MAX
         var next: Event? = nil
@@ -376,7 +376,7 @@ public class Eatery: NSObject {
      and the food items available for the category as a string list. Used to easily iterate
      over all items in the hardcoded menu. Ex: [("Entrees",["Chicken", "Steak", "Fish"]), ("Fruit", ["Apples"])]
      */
-    private func getMenuIterable(menuList: [String: [MenuItem]]?) -> [(String,[String])] {
+    private func getMenuIterable(_ menuList: [String: [MenuItem]]?) -> [(String,[String])] {
         guard let menu = menuList else { return [] }
         return menu.map({ (name, items) -> (String, [String]) in
             (name, items.map({ ($0.name) }))
@@ -401,9 +401,9 @@ public class Eatery: NSObject {
         }
     }
 
-    public func sortMenu(menu: [String: [MenuItem]]) -> [(String, [MenuItem])] {
+    public func sortMenu(_ menu: [String: [MenuItem]]) -> [(String, [MenuItem])] {
         
-        let sortedMenu = menu.sort {
+        let sortedMenu = menu.sorted {
             if($0.0 == "Hot Traditional Station - Entrees") {
                 return true
             }
@@ -415,6 +415,6 @@ public class Eatery: NSObject {
             return false
         }
         
-        return sortedMenu
+        return sortedMen
     }
  }

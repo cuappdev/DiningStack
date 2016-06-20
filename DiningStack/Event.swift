@@ -14,13 +14,13 @@ import SwiftyJSON
  */
 public struct Event {
     /// Date and time that this event begins
-    public internal(set) var startDate: NSDate
+    public internal(set) var startDate: Foundation.Date
     
     /// Human-readable representation of `startDate`
     public let startDateFormatted: String
     
     /// Date and time that this event ends
-    public internal(set) var endDate: NSDate
+    public internal(set) var endDate: Foundation.Date
     
     /// Human-readable repersentation of `endDate`
     public let endDateFormatted: String
@@ -38,8 +38,8 @@ public struct Event {
     internal init(json: JSON) {
         desc = json[APIKey.Description.rawValue].stringValue
         summary = json[APIKey.Summary.rawValue].stringValue
-        startDate = NSDate(timeIntervalSince1970: json[APIKey.StartTime.rawValue].doubleValue)
-        endDate   = NSDate(timeIntervalSince1970: json[APIKey.EndTime.rawValue].doubleValue)
+        startDate = Foundation.Date(timeIntervalSince1970: json[APIKey.StartTime.rawValue].doubleValue)
+        endDate   = Foundation.Date(timeIntervalSince1970: json[APIKey.EndTime.rawValue].doubleValue)
         startDateFormatted = json[APIKey.StartFormat.rawValue].stringValue
         endDateFormatted = json[APIKey.EndFormat.rawValue].stringValue
         
@@ -47,7 +47,7 @@ public struct Event {
         menu = Event.menuFromJSON(menuJSON)
     }
     
-    internal static func menuFromJSON(menuJSON: JSON) -> [String: [MenuItem]] {
+    internal static func menuFromJSON(_ menuJSON: JSON) -> [String: [MenuItem]] {
         var items: [String: [MenuItem]] = [:]
 
         for (_, json) in menuJSON {
@@ -72,8 +72,8 @@ public struct Event {
      
      - returns: true if `date` is between the `startDate` and `endDate` of the event
      */
-    public func occurringOnDate(date: NSDate) -> Bool {
-        return startDate.compare(date) != .OrderedDescending && endDate.compare(date) != .OrderedAscending
+    public func occurringOnDate(_ date: Foundation.Date) -> Bool {
+        return startDate.compare(date) != .orderedDescending && endDate.compare(date) != .orderedAscending
     }
     
     /**
