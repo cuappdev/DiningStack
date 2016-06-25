@@ -14,13 +14,13 @@ import SwiftyJSON
  */
 public struct Event {
     /// Date and time that this event begins
-    public internal(set) var startDate: Foundation.Date
+    public internal(set) var startDate: Date
     
     /// Human-readable representation of `startDate`
     public let startDateFormatted: String
     
     /// Date and time that this event ends
-    public internal(set) var endDate: Foundation.Date
+    public internal(set) var endDate: Date
     
     /// Human-readable repersentation of `endDate`
     public let endDateFormatted: String
@@ -38,8 +38,8 @@ public struct Event {
     internal init(json: JSON) {
         desc = json[APIKey.Description.rawValue].stringValue
         summary = json[APIKey.Summary.rawValue].stringValue
-        startDate = Foundation.Date(timeIntervalSince1970: json[APIKey.StartTime.rawValue].doubleValue)
-        endDate   = Foundation.Date(timeIntervalSince1970: json[APIKey.EndTime.rawValue].doubleValue)
+        startDate = Date(timeIntervalSince1970: json[APIKey.StartTime.rawValue].doubleValue)
+        endDate   = Date(timeIntervalSince1970: json[APIKey.EndTime.rawValue].doubleValue)
         startDateFormatted = json[APIKey.StartFormat.rawValue].stringValue
         endDateFormatted = json[APIKey.EndFormat.rawValue].stringValue
         
@@ -72,7 +72,7 @@ public struct Event {
      
      - returns: true if `date` is between the `startDate` and `endDate` of the event
      */
-    public func occurringOnDate(_ date: Foundation.Date) -> Bool {
+    public func occurringOnDate(_ date: Date) -> Bool {
         return startDate.compare(date) != .orderedDescending && endDate.compare(date) != .orderedAscending
     }
     

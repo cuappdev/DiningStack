@@ -159,7 +159,7 @@ public class Eatery: NSObject {
             if let _todaysEventsString = _todaysEventsString {
                 return _todaysEventsString
             }
-            let ar = Array(eventsOnDate(Foundation.Date()).values)
+            let ar = Array(eventsOnDate(Date()).values)
             let strings = ar.map { (ev: Event) -> String in
                 ev.menu.description
             }
@@ -233,7 +233,7 @@ public class Eatery: NSObject {
             }
             
             
-            let weekdays = Date.ofDateSpan(hour[APIKey.Weekday.rawValue].stringValue)
+            let weekdays = DayOfTheWeek.ofDateSpan(hour[APIKey.Weekday.rawValue].stringValue)
             for weekday in weekdays ?? [] {
                 let weekdayKey = weekday.getDateString()
                 var currentEventsCopy: [String: Event] = [:]
@@ -275,8 +275,8 @@ public class Eatery: NSObject {
      
      - see: `isOpenForDate`
      */
-    public func isOpenOnDate(_ date: Foundation.Date) -> Bool {
-        let yesterday = Foundation.Date(timeInterval: -1 * 24 * 60 * 60, since: date)
+    public func isOpenOnDate(_ date: Date) -> Bool {
+        guard let yesterday = Calendar.current().date(byAdding: .day, value: -1, to: Date()) else { return false }
         
         for now in [date, yesterday] {
             let events = eventsOnDate(now)
@@ -300,7 +300,7 @@ public class Eatery: NSObject {
      
      - see: `isOpenOnDate`
      */
-    public func isOpenForDate(_ date: Foundation.Date) -> Bool {
+    public func isOpenForDate(_ date: Date) -> Bool {
         let events = eventsOnDate(date)
         return events.count != 0
     }
@@ -311,7 +311,7 @@ public class Eatery: NSObject {
      - returns: true if the eatery is open at the present date and time
      */
     public func isOpenNow() -> Bool {
-        return isOpenOnDate(Foundation.Date())
+        return isOpenOnDate(Date())
     }
     
     /**
@@ -320,7 +320,7 @@ public class Eatery: NSObject {
      - returns: true if the eatery will be open at some point today or was already open
      */
     public func isOpenToday() -> Bool {
-        return isOpenForDate(Foundation.Date())
+        return isOpenForDate(Date())
     }
     
     /**
@@ -330,7 +330,7 @@ public class Eatery: NSObject {
      
      - returns: A mapping from Event Name to Event for the given day.
      */
-    public func eventsOnDate(_ date: Foundation.Date) -> [String: Event] {
+    public func eventsOnDate(_ date: Date) -> [String: Event] {
         let dateString = Eatery.dateFormatter.string(from: date)
         return events[dateString] ?? [:]
     }
@@ -344,9 +344,9 @@ public class Eatery: NSObject {
      For our purposes, "active" means currently running or will run soon. As in, if there
      was no event running at exactly the date given but there will be one 15 minutes afterwards, that event would be returned. If the next event was over a day away, nil would be returned.
      */
-    public func activeEventForDate(_ date: Foundation.Date) -> Event? {
-        let yesterday = Foundation.Date(timeInterval: (-24 * 60 * 60), since: date)
-        let tomorrow = Foundation.Date(timeInterval: 24 * 60 * 60, since: date)
+    public func activeEventForDate(_ date: Date) -> Event? {
+        guard let yesterday = Calendar.current().date(byAdding: .day, value: -1, to: Date()) else { return nil }
+        guard let tomorrow = Calendar.current().date(byAdding: .day, value: 1, to: Date()) else { return nil }
         
         var timeDifference = DBL_MAX
         var next: Event? = nil
@@ -399,22 +399,5 @@ public class Eatery: NSObject {
         } else {
             return []
         }
-    }
-
-    public func sortMenu(_ menu: [String: [MenuItem]]) -> [(String, [MenuItem])] {
-        
-        let sortedMenu = menu.sorted {
-            if($0.0 == "Hot Traditional Station - Entrees") {
-                return true
-            }
-            
-            if($0.0 == "Hot Traditional Station - Sides" && $1.0 != "Hot Traditional Station - Entrees") {
-                return true
-            }
-            
-            return false
-        }
-        
-        return sortedMen
     }
  }

@@ -112,7 +112,7 @@ enum DataError: ErrorProtocol {
     case serverError
 }
 
-public enum Date: Int {
+public enum DayOfTheWeek: Int {
   case sunday = 1
   case monday
   case tuesday
@@ -142,32 +142,32 @@ public enum Date: Int {
     }
   }
   
-  static func ofDateSpan(_ string: String) -> [Date]? {
+  static func ofDateSpan(_ string: String) -> [DayOfTheWeek]? {
     let partition = string.lowercased().characters.split{ $0 == "-" }.map(String.init)
     switch partition.count {
     case 2:
-      guard let start = Date(string: partition[0]) else { return nil }
-      guard let end = Date(string: partition[1]) else { return nil }
-      var result: [Date] = []
+      guard let start = DayOfTheWeek(string: partition[0]) else { return nil }
+      guard let end = DayOfTheWeek(string: partition[1]) else { return nil }
+      var result: [DayOfTheWeek] = []
       let endValue = start.rawValue <= end.rawValue ? end.rawValue : end.rawValue + 7
       for dayValue in start.rawValue...endValue {
-        guard let day = Date(rawValue: dayValue % 7) else { return nil }
+        guard let day = DayOfTheWeek(rawValue: dayValue % 7) else { return nil }
         result.append(day)
       }
       return result
     case 1:
-      guard let start = Date(string: partition[0]) else { return nil }
+      guard let start = DayOfTheWeek(string: partition[0]) else { return nil }
       return [start]
     default:
       return nil
     }
   }
   
-  func getDate() -> Foundation.Date {
-    let startOfToday = Calendar.current().startOfDay(for: Foundation.Date())
-    let weekDay = Calendar.current().components(.weekday, from: Foundation.Date()).weekday
+  func getDate() -> Date {
+    let startOfToday = Calendar.current().startOfDay(for: Date())
+    let weekDay = Calendar.current().components(.weekday, from: Date()).weekday
     let daysAway = (rawValue - weekDay! + 7) % 7
-    let endDate = Calendar.current().date(byAdding: .weekday, value: daysAway, to: startOfToday, options: []) ?? Foundation.Date()
+    let endDate = Calendar.current().date(byAdding: .weekday, value: daysAway, to: startOfToday) ?? Date()
     return endDate
   }
   
@@ -178,13 +178,13 @@ public enum Date: Int {
     return formatter.string(from: date)
   }
   
-  func getTimeStamp(_ timeString: String) -> Foundation.Date {
+  func getTimeStamp(_ timeString: String) -> Date {
     let endDate = getDate()
     let formatter = DateFormatter()
     formatter.dateFormat = "h:mma"
-    let timeIntoEndDate = formatter.date(from: timeString) ?? Foundation.Date()
+    let timeIntoEndDate = formatter.date(from: timeString) ?? Date()
     let components = Calendar.current().components([.hour, .minute], from: timeIntoEndDate)
-    return Calendar.current().date(byAdding: components, to: endDate, options: []) ?? Foundation.Date()
+    return Calendar.current().date(byAdding: components, to: endDate) ?? Date()
   }
 }
 
@@ -226,9 +226,9 @@ public class DataManager: NSObject {
             }
             
             let eateryList = json["data"]["eateries"]
-            let externalEateryList = kExternalEateries["eateries"]!
             self.eateries = eateryList.map { Eatery(json: $0.1) }
-            let externalEateries = externalEateryList.map { Eatery(json: $0.1) }
+//            let externalEateryList = kExternalEateries["eateries"]!
+//            let externalEateries = externalEateryList.map { Eatery(json: $0.1) }
             //don't add duplicate external eateries
             //Uncomment after CU Dining Pushes Eatery with marketing
             /*
@@ -251,7 +251,7 @@ public class DataManager: NSObject {
                 // upon the age of the entry in the cache
                 if let date = info["date"] as? Double {
                     let maxAge: Double = 24 * 60 * 60
-                    let now = Foundation.Date().timeIntervalSince1970
+                    let now = Date().timeIntervalSince1970
                     if now - date <= maxAge {
                         processData(cached!.data)
                         return
