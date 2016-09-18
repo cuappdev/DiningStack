@@ -36,14 +36,14 @@ public struct Event {
     public let menu: [String: [MenuItem]]
     
     internal init(json: JSON) {
-        desc = json[APIKey.Description.rawValue].stringValue
-        summary = json[APIKey.Summary.rawValue].stringValue
-        startDate = Date(timeIntervalSince1970: json[APIKey.StartTime.rawValue].doubleValue)
-        endDate   = Date(timeIntervalSince1970: json[APIKey.EndTime.rawValue].doubleValue)
-        startDateFormatted = json[APIKey.StartFormat.rawValue].stringValue
-        endDateFormatted = json[APIKey.EndFormat.rawValue].stringValue
+        desc = json[APIKey.description.rawValue].stringValue
+        summary = json[APIKey.summary.rawValue].stringValue
+        startDate = Date(timeIntervalSince1970: json[APIKey.startTime.rawValue].doubleValue)
+        endDate   = Date(timeIntervalSince1970: json[APIKey.endTime.rawValue].doubleValue)
+        startDateFormatted = json[APIKey.startFormat.rawValue].stringValue
+        endDateFormatted = json[APIKey.endFormat.rawValue].stringValue
         
-        let menuJSON = json[APIKey.Menu.rawValue]
+        let menuJSON = json[APIKey.menu.rawValue]
         menu = Event.menuFromJSON(menuJSON)
     }
     
@@ -51,10 +51,10 @@ public struct Event {
         var items: [String: [MenuItem]] = [:]
 
         for (_, json) in menuJSON {
-            let category = json[APIKey.Category.rawValue].stringValue
+            let category = json[APIKey.category.rawValue].stringValue
             var menuItems: [MenuItem] = []
             
-            let itemsJSON = json[APIKey.Items.rawValue]
+            let itemsJSON = json[APIKey.items.rawValue]
             for (_, itemJSON) in itemsJSON {
                 menuItems.append(MenuItem(json: itemJSON))
             }

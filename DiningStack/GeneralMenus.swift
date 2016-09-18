@@ -12,5 +12,5 @@ import SwiftyJSON
 internal let kFrameworkBundle = Bundle(for: DataManager.self)
 
 /// Hardcoded menus for those which would not normally have them
-internal let kEateryGeneralMenus = JSON(data: try! Data(contentsOf: kFrameworkBundle.urlForResource("hardcodedMenus", withExtension: "json")!)).dictionaryValue
-internal let kExternalEateries = JSON(data: try! Data(contentsOf: kFrameworkBundle.urlForResource("externalEateries", withExtension: "json")!)).dictionaryValue
+internal let kEateryGeneralMenus = JSON(data: try! Data(contentsOf: kFrameworkBundle.url(forResource: "hardcodedMenus", withExtension: "json")!)).dictionaryValue
+internal let kExternalEateries = JSON(data: try! Data(contentsOf: kFrameworkBundle.url(forResource: "externalEateries", withExtension: "json")!)).dictionaryValue

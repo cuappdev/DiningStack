@@ -33,7 +33,7 @@ public struct MenuItem {
     }
     
     internal init(json: JSON) {
-        name = json[APIKey.Item.rawValue].stringValue
-        healthy = json[APIKey.Healthy.rawValue].boolValue
+        name = json[APIKey.item.rawValue].stringValue
+        healthy = json[APIKey.healthy.rawValue].boolValue
     }
 }
