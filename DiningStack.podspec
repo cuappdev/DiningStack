@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.module_name = 'DiningStack'
 
-  s.dependency 'Alamofire', :git=> 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift3'
-  s.dependency 'SwiftyJSON', :git=> 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'swift3'
+  s.dependency = { 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift3' }
+  s.dependency = { 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'swift3' }
 
 end
