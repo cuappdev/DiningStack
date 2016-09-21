@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.module_name = 'DiningStack'
 
-  s.dependency = 'Alamofire'
-  s.dependency = 'SwiftyJSON'
+  s.dependency 'Alamofire'
+  s.dependency 'SwiftyJSON'
 
 end
