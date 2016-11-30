@@ -15,23 +15,35 @@ let separator = ":------------------------------------------"
 /**
  Router Endpoints enum
  */
-internal enum Router: URLStringConvertible {
-    static let baseURLString = "https://now.dining.cornell.edu/api/1.0/dining"
-    case Root
-    case Eateries
-    
-    var URLString: String {
+internal enum Router: URLConvertible {
+    /// Returns a URL that conforms to RFC 2396 or throws an `Error`.
+    ///
+    /// - throws: An `Error` if the type cannot be converted to a `URL`.
+    ///
+    /// - returns: A URL or throws an `Error`.
+    public func asURL() throws -> URL {
         let path: String = {
             switch self {
-            case .Root:
+            case .root:
                 return "/"
-            case .Eateries:
+            case .eateries:
                 return "/eateries.json"
             }
         }()
-        return Router.baseURLString + path
+        
+        if let url = URL(string: Router.baseURLString + path) {
+            return url
+        } else {
+            throw AFError.invalidURL(url: self)
+        }
     }
+    
+    static let baseURLString = "https://now.dining.cornell.edu/api/1.0/dining"
+    case root
+    case eateries
+    
 }
+
 
 /**
  Keys for Cornell API
@@ -39,59 +51,59 @@ internal enum Router: URLStringConvertible {
  */
 public enum APIKey : String {
     // Top Level
-    case Status    = "status"
-    case Data      = "data"
-    case Meta      = "meta"
-    case Message   = "message"
+    case status    = "status"
+    case data      = "data"
+    case meta      = "meta"
+    case message   = "message"
     
     // Data
-    case Eateries  = "eateries"
+    case eateries  = "eateries"
     
     // Eatery
-    case Identifier       = "id"
-    case Slug             = "slug"
-    case Name             = "name"
-    case NameShort        = "nameshort"
-    case EateryTypes      = "eateryTypes"
-    case AboutShort       = "aboutshort"
-    case Latitude         = "latitude"
-    case Longitude        = "longitude"
-    case Hours            = "operatingHours"
-    case Payment          = "payMethods"
-    case PhoneNumber      = "contactPhone"
-    case CampusArea       = "campusArea"
-    case Address          = "location"
-    case DiningItems      = "diningItems"
+    case identifier       = "id"
+    case slug             = "slug"
+    case name             = "name"
+    case nameShort        = "nameshort"
+    case eateryTypes      = "eateryTypes"
+    case aboutShort       = "aboutshort"
+    case latitude         = "latitude"
+    case longitude        = "longitude"
+    case hours            = "operatingHours"
+    case payment          = "payMethods"
+    case phoneNumber      = "contactPhone"
+    case campusArea       = "campusArea"
+    case address          = "location"
+    case diningItems      = "diningItems"
     
     // Hours
-    case Date             = "date"
-    case Events           = "events"
+    case date             = "date"
+    case events           = "events"
     
     // Events
-    case StartTime        = "startTimestamp"
-    case EndTime          = "endTimestamp"
-    case StartFormat      = "start"
-    case EndFormat        = "end"
-    case Menu             = "menu"
-    case Summary          = "calSummary"
+    case startTime        = "startTimestamp"
+    case endTime          = "endTimestamp"
+    case startFormat      = "start"
+    case endFormat        = "end"
+    case menu             = "menu"
+    case summary          = "calSummary"
     
     // Events/Payment/CampusArea/EateryTypes
-    case Description      = "descr"
-    case ShortDescription = "descrshort"
+    case description      = "descr"
+    case shortDescription = "descrshort"
     
     // Menu
-    case Items            = "items"
-    case Category         = "category"
-    case Item             = "item"
-    case Healthy          = "healthy"
+    case items            = "items"
+    case category         = "category"
+    case item             = "item"
+    case healthy          = "healthy"
     
     // Meta
-    case Copyright = "copyright"
-    case Timestamp = "responseDttm"
+    case copyright = "copyright"
+    case timestamp = "responseDttm"
   
     // External
-    case Weekday  = "weekday"
-    case External = "external"
+    case weekday  = "weekday"
+    case external = "external"
 }
 
 /**
@@ -100,7 +112,7 @@ public enum APIKey : String {
  - Success: String for the status if the request was a success.
  */
 enum Status: String {
-    case Success = "success"
+    case success = "success"
 }
 
 /**
@@ -108,83 +120,83 @@ enum Status: String {
  
  - ServerError: An error arose from the server-side of things
  */
-enum DataError: ErrorType {
-    case ServerError
+enum DataError: Error {
+    case serverError
 }
 
-public enum Date: Int {
-  case Sunday = 1
-  case Monday
-  case Tuesday
-  case Wednesday
-  case Thursday
-  case Friday
-  case Saturday
+public enum DayOfTheWeek: Int {
+  case sunday = 1
+  case monday
+  case tuesday
+  case wednesday
+  case thursday
+  case friday
+  case saturday
   
   init?(string: String) {
-    switch string.lowercaseString {
+    switch string.lowercased() {
     case "sunday":
-      self = .Sunday
+      self = .sunday
     case "monday":
-      self = .Monday
+      self = .monday
     case "tuesday":
-      self = .Tuesday
+      self = .tuesday
     case "wednesday":
-      self = .Wednesday
+      self = .wednesday
     case "thursday":
-      self = .Thursday
+      self = .thursday
     case "friday":
-      self = .Friday
+      self = .friday
     case "saturday":
-      self = .Saturday
+      self = .saturday
     default:
       return nil
     }
   }
   
-  static func ofDateSpan(string: String) -> [Date]? {
-    let partition = string.lowercaseString.characters.split{ $0 == "-" }.map(String.init)
+  static func ofDateSpan(_ string: String) -> [DayOfTheWeek]? {
+    let partition = string.lowercased().characters.split{ $0 == "-" }.map(String.init)
     switch partition.count {
     case 2:
-      guard let start = Date(string: partition[0]) else { return nil }
-      guard let end = Date(string: partition[1]) else { return nil }
-      var result: [Date] = []
+      guard let start = DayOfTheWeek(string: partition[0]) else { return nil }
+      guard let end = DayOfTheWeek(string: partition[1]) else { return nil }
+      var result: [DayOfTheWeek] = []
       let endValue = start.rawValue <= end.rawValue ? end.rawValue : end.rawValue + 7
       for dayValue in start.rawValue...endValue {
-        guard let day = Date(rawValue: dayValue % 7) else { return nil }
+        guard let day = DayOfTheWeek(rawValue: dayValue % 7) else { return nil }
         result.append(day)
       }
       return result
     case 1:
-      guard let start = Date(string: partition[0]) else { return nil }
+      guard let start = DayOfTheWeek(string: partition[0]) else { return nil }
       return [start]
     default:
       return nil
     }
   }
   
-  func getDate() -> NSDate {
-    let startOfToday = NSCalendar.currentCalendar().startOfDayForDate(NSDate())
-    let weekDay = NSCalendar.currentCalendar().components(.Weekday, fromDate: NSDate()).weekday
+  func getDate() -> Date {
+    let startOfToday = Calendar.current.startOfDay(for: Date())
+    let weekDay = Calendar.current.component(.weekday, from: Date())
     let daysAway = (rawValue - weekDay + 7) % 7
-    let endDate = NSCalendar.currentCalendar().dateByAddingUnit(.Weekday, value: daysAway, toDate: startOfToday, options: []) ?? NSDate()
+    let endDate = Calendar.current.date(byAdding: .weekday, value: daysAway, to: startOfToday) ?? Date()
     return endDate
   }
   
   func getDateString() -> String {
     let date = getDate()
-    let formatter = NSDateFormatter()
+    let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd"
-    return formatter.stringFromDate(date)
+    return formatter.string(from: date)
   }
   
-  func getTimeStamp(timeString: String) -> NSDate {
+  func getTimeStamp(_ timeString: String) -> Date {
     let endDate = getDate()
-    let formatter = NSDateFormatter()
+    let formatter = DateFormatter()
     formatter.dateFormat = "h:mma"
-    let timeIntoEndDate = formatter.dateFromString(timeString) ?? NSDate()
-    let components = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: timeIntoEndDate)
-    return NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: endDate, options: []) ?? NSDate()
+    let timeIntoEndDate = formatter.date(from: timeString) ?? Date()
+    let components = Calendar.current.dateComponents([.hour, .minute], from: timeIntoEndDate)
+    return Calendar.current.date(byAdding: components, to: endDate) ?? Date()
   }
 }
 
@@ -207,43 +219,42 @@ public class DataManager: NSObject {
      of the data or with an error if there was one. Use `-eateries` to get the parsed
      response.
      */
-    public func fetchEateries(force: Bool, completion: ((error: ErrorType?) -> (Void))?) {
+    public func fetchEateries(_ force: Bool, completion: ((Error?) -> Void)?) {
         if eateries.count > 0 && !force {
-            completion?(error: nil)
+            completion?(nil)
             return
         }
         
-        let req = Alamofire.request(.GET, Router.Eateries)
+        let req = Alamofire.request(Router.eateries)
         
-        func processData (data: NSData) {
+        func processData (_ data: Data) {
             
             let json = JSON(data: data)
             
-            if (json[APIKey.Status.rawValue].stringValue != Status.Success.rawValue) {
-                completion?(error: DataError.ServerError)
+            if (json[APIKey.status.rawValue].stringValue != Status.success.rawValue) {
+                completion?(DataError.serverError)
                 // do something is message
                 return
             }
             
             let eateryList = json["data"]["eateries"]
-            let externalEateryList = kExternalEateries["eateries"]!
             self.eateries = eateryList.map { Eatery(json: $0.1) }
+            let externalEateryList = kExternalEateries["eateries"]!
             let externalEateries = externalEateryList.map { Eatery(json: $0.1) }
             //don't add duplicate external eateries
             //Uncomment after CU Dining Pushes Eatery with marketing
-            /*
+            
             for external in externalEateries {
-                if !eateries.contains({ $0.slug == external.slug }) {
+                if !eateries.contains(where: { $0.slug == external.slug }) {
                     eateries.append(external)
                 }
             }
-            */
             
-            completion?(error: nil)
+            completion?(nil)
         }
         
-        if let request = req.request where !force {
-            let cached = NSURLCache.sharedURLCache().cachedResponseForRequest(request)
+        if let request = req.request, !force {
+            let cached = URLCache.shared.cachedResponse(for: request)
             if let info = cached?.userInfo {
                 // This is hacky because the server doesn't support caching really
                 // and even if it did it is too slow to respond to make it worthwhile
@@ -251,7 +262,7 @@ public class DataManager: NSObject {
                 // upon the age of the entry in the cache
                 if let date = info["date"] as? Double {
                     let maxAge: Double = 24 * 60 * 60
-                    let now = NSDate().timeIntervalSince1970
+                    let now = Date().timeIntervalSince1970
                     if now - date <= maxAge {
                         processData(cached!.data)
                         return
@@ -266,17 +277,17 @@ public class DataManager: NSObject {
             let response = resp.response
             
             if let data = data.value,
-                response = response,
-                request = request {
-                    let cached = NSCachedURLResponse(response: response, data: data, userInfo: ["date": NSDate().timeIntervalSince1970], storagePolicy: .Allowed)
-                    NSURLCache.sharedURLCache().storeCachedResponse(cached, forRequest: request)
+                let response = response,
+                let request = request {
+                    let cached = CachedURLResponse(response: response, data: data, userInfo: ["date": NSDate().timeIntervalSince1970], storagePolicy: .allowed)
+                    URLCache.shared.storeCachedResponse(cached, for: request)
             }
             
             if let jsonData = data.value {
                 processData(jsonData)
                 
             } else {
-                completion?(error: data.error)
+                completion?(data.error)
             }
             
         }

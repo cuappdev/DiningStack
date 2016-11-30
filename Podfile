@@ -2,12 +2,12 @@ use_frameworks!
 source 'https://github.com/CocoaPods/Specs.git'
 
 def shared_pods
-    pod 'Alamofire', '~> 3.1.5'
-    pod 'SwiftyJSON', '~> 2.3.2'
+    pod 'Alamofire'
+    pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
 end
 
 target :'DiningStack' do
-    platform:ios, '8.0'
+    platform:ios, '9.0'
     shared_pods
 end
 

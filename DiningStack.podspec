@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author           = { "CUAppDev" => "info@cuappdev.org" }
   s.source           = { :git => "https://github.com/cuappdev/DiningStack.git", :tag => s.version }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
   s.requires_arc = true
 
@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.module_name = 'DiningStack'
 
-  s.dependency 'Alamofire', '3.1.2'
-  s.dependency 'SwiftyJSON', '2.3.1'
+  s.dependency 'Alamofire'
+  s.dependency 'SwiftyJSON'
+
 end
