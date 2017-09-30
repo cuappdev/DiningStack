@@ -348,7 +348,7 @@ public class Eatery: NSObject {
         guard let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) else { return nil }
         guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date()) else { return nil }
         
-        var timeDifference = DBL_MAX
+        var timeDifference = Double.greatestFiniteMagnitude
         var next: Event? = nil
         
         for now in [yesterday, date, tomorrow] {
