@@ -229,7 +229,7 @@ public class DataManager: NSObject {
         
         func processData (_ data: Data) {
             
-            let json = JSON(data: data)
+            let json = JSON(data)
             
             if (json[APIKey.status.rawValue].stringValue != Status.success.rawValue) {
                 completion?(DataError.serverError)
