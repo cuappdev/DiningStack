@@ -155,7 +155,7 @@ public enum DayOfTheWeek: Int {
   }
   
   static func ofDateSpan(_ string: String) -> [DayOfTheWeek]? {
-    let partition = string.lowercased().characters.split{ $0 == "-" }.map(String.init)
+    let partition = string.lowercased().split { $0 == "-" } .map(String.init)
     switch partition.count {
     case 2:
       guard let start = DayOfTheWeek(string: partition[0]) else { return nil }
