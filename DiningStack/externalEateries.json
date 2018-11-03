@@ -106,6 +106,17 @@
                              "menu": []
                          }
                     ]
+                },
+                {
+                	"weekday": "sunday",
+                	"events": [
+                		{
+                			"descr": "General",
+                			"start": "2:30pm",
+                			"end": "7:30pm",
+                			"menu": []
+                		}
+                	]
                 }
             ],
            "payMethods" : [
@@ -162,26 +173,37 @@
            "location": "Mann Library",
            "operatingHours": [
                 {
-                    "weekday": "monday-thursday",
+                    "weekday": "monday-wednesday",
                     "events": [
                          {
                              "descr": "General",
-                             "start": "7:30am",
+                             "start": "8:00am",
                              "end": "9:00pm",
                              "menu": []
                          }
-                        ]
+                  	]
+                },
+                {
+                    "weekday": "thursday",
+                    "events": [
+                         {
+                             "descr": "General",
+                             "start": "8:00am",
+                             "end": "8:00pm",
+                             "menu": []
+                         }
+                   	]
                 },
                 {
                     "weekday": "friday",
                     "events": [
                          {
                              "descr": "General",
-                             "start": "7:30am",
+                             "start": "8:00am",
                              "end": "5:00pm",
                              "menu": []
                          }
-                        ]
+                   	]
                 },
                 {
                     "weekday": "saturday",
@@ -429,7 +451,7 @@
                          {
                              "descr": "General",
                              "start": "7:30am",
-                             "end": "5:00pm",
+                             "end": "6:00pm",
                              "menu": []
                          }
                      ]
@@ -489,8 +511,8 @@
                     "events": [
                          {
                              "descr": "General",
-                             "start": "9:00am",
-                             "end": "4:00pm",
+                             "start": "8:00am",
+                             "end": "5:30pm",
                              "menu": []
                          }
                      ]
@@ -549,7 +571,7 @@
                     "events": [
                          {
                              "descr": "General",
-                             "start": "8:00am",
+                             "start": "11:00am",
                              "end": "2:00pm",
                              "menu": []
                          }

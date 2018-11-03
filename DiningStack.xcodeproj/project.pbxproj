@@ -151,7 +151,6 @@
 				6586E6331C6913B500A5A56C /* Frameworks */,
 				6586E6351C6913B500A5A56C /* Headers */,
 				6586E6371C6913B500A5A56C /* Resources */,
-				2197128199042D204A4C0B1D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,7 +170,6 @@
 				FAF5CE6F1BE19C6E00C49EDE /* Frameworks */,
 				FAF5CE701BE19C6E00C49EDE /* Headers */,
 				FAF5CE711BE19C6E00C49EDE /* Resources */,
-				B3673BEED227A52E2A270302 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,21 +234,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2197128199042D204A4C0B1D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiningStack WatchKit/Pods-DiningStack WatchKit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		45A369AC2A6C7B73381A5C1D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,21 +268,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3673BEED227A52E2A270302 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiningStack/Pods-DiningStack-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
