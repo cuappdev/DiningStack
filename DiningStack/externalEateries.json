@@ -8,8 +8,10 @@
            "about" : "",
            "cornellDining": false,
            "contactPhone": "1-800-541-2501",
-           "latitude": 42.446267,
-           "longitude": -76.482314,
+           "coordinates": {
+             "latitude": 42.446267,
+             "longitude": -76.482314
+           },
            "location": "Statler",
            "campusArea": {
                "descr": "Central Campus",
@@ -77,8 +79,10 @@
            "about" : "",
            "cornellDining": false,
            "contactPhone": "1-800-541-2501",
-           "latitude": 42.445921,
-           "longitude": -76.481984,
+           "coordinates": {
+             "latitude": 42.445921,
+             "longitude": -76.481984
+           },
            "campusArea": {
                "descr": "Central Campus",
                "descrshort": "Central"
@@ -164,8 +168,10 @@
            "about" : "Manndible Cafe is not your average eatery. There’s something different about this menu: sandwiches with chicken raised around the corner, the perfect cup of coffee roasted that morning down the hill, a fresh organic salad grown across campus, a vegan dessert so rich you’d never guess it had no dairy or eggs, and to finish it off- you can toss your plate and cup into a compost bin instead of a trash can.",
            "cornellDining": false,
            "contactPhone": "1-607-254-6206",
-           "latitude": 42.448628,
-           "longitude": -76.476530,
+           "coordinates": {
+             "latitude": 42.448628,
+             "longitude": -76.476530
+           },
            "campusArea": {
                "descr": "Central Campus",
                "descrshort": "Central"
@@ -437,8 +443,10 @@
            "about" : "",
            "cornellDining": false,
            "contactPhone": "",
-           "latitude": 42.449091,
-           "longitude": -76.483414,
+           "coordinates": {
+             "latitude": 42.449091,
+             "longitude": -76.483414
+           },
            "campusArea": {
                "descr": "Central Campus",
                "descrshort": "Central"
@@ -498,8 +506,10 @@
            "about" : "",
            "cornellDining": false,
            "contactPhone": "1-607-227-5391",
-           "latitude": 42.444958,
-           "longitude": -76.481169,
+           "coordinates": {
+             "latitude": 42.444958,
+             "longitude": -76.481169
+           },
            "campusArea": {
                "descr": "Central Campus",
                "descrshort": "Central"
@@ -547,8 +557,10 @@
            "about" : "",
            "cornellDining": false,
            "contactPhone": "1-607-255-6980",
-           "latitude": 42.443577,
-           "longitude": -76.486034,
+           "coordinates": {
+             "latitude": 42.443577,
+             "longitude": -76.486034
+           },
            "campusArea": {
                "descr": "Central Campus",
                "descrshort": "Central"
