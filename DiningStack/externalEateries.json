@@ -50,7 +50,7 @@
                   "healthy": true
                 },
                 {
-                  "item": "Burrito bowl",
+                  "item": "Burrito Bowl",
                   "healthy": false
                 },
                 {
@@ -58,7 +58,7 @@
                   "healthy": true
                 },
                 {
-                  "item": "Chicken tenders",
+                  "item": "Chicken Tenders",
                   "healthy": false
                 },
                 {
@@ -155,7 +155,7 @@
                   "healthy": false
                 },
                 {
-                  "item": "Pepsi Beverages",
+                  "item": "Soft Drinks",
                   "healthy": false
                 }
             ]
@@ -258,7 +258,7 @@
                   "healthy": true
                 },
                 {
-                  "item": "Manndible made Granola",
+                  "item": "Mandible-Made Granola",
                   "healthy": true
                 },
                 {
@@ -278,7 +278,7 @@
                   "healthy": false
                 },
                 {
-                  "item": "PrOats",
+                  "item": "Proats",
                   "healthy": true
                 },
                 {
@@ -410,7 +410,7 @@
                   "healthy": false
                 },
                 {
-                  "item": "Cofee Drinks",
+                  "item": "Coffee Drinks",
                   "healthy": false
                 },
                 {
@@ -493,7 +493,7 @@
                         "healthy": false
                     },
                     {
-                        "item": "Pepsi Drinks",
+                        "item": "Soft Drinks",
                         "healthy": true
                     }
             ]
