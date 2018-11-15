@@ -2,7 +2,7 @@
     "Trillium": [
         {
             "category": "General",
-            "items": [
+            "diningItems": [
                 {
                     "healthy": false,
                     "item": "Starbucks Coffees"
@@ -85,7 +85,7 @@
     "Synapsis-Cafe": [
         {
             "category": "General",
-            "items": [
+            "diningItems": [
                 {
                     "healthy": false,
                     "item": "Finger Lakes Specialty Coffee"
