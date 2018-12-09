@@ -19,7 +19,7 @@
            },
            "operatingHours": [
                 {
-                    "weekday": "monday-wednesday",
+                    "weekday": "monday-friday",
                     "events": [
                          {
                              "descr": "Lunch",
@@ -28,17 +28,6 @@
                              "menu": []
                          }
                      ]
-                },
-                {
-                    "weekday": "thursday-friday",
-                    "events": [
-                        {
-                            "descr": "Lunch",
-                            "start": "10:00am",
-                            "end": "2:30pm",
-                            "menu": []
-                        }
-                    ]
                 }
             ],
            "payMethods" : [
@@ -101,7 +90,7 @@
            "location": "Statler Hotel",
            "operatingHours": [
                 {
-                    "weekday": "monday-wednesday",
+                    "weekday": "monday-thursday",
                     "events": [
                          {
                              "descr": "General",
@@ -112,7 +101,7 @@
                      ]
                 },
                 {
-                    "weekday": "thursday",
+                    "weekday": "friday",
                     "events": [
                          {
                              "descr": "General",
@@ -121,6 +110,17 @@
                              "menu": []
                          }
                     ]
+                },
+                {
+                	"weekday": "sunday",
+                	"events": [
+                		{
+                			"descr": "General",
+                			"start": "2:30pm",
+                			"end": "7:30pm",
+                			"menu": []
+                		}
+                	]
                 }
             ],
            "payMethods" : [
