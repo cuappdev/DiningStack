@@ -454,7 +454,7 @@
            "location": "Goldwin Smith Hall",
            "operatingHours": [
                 {
-                    "weekday": "monday-friday",
+                    "weekday": "friday",
                     "events": [
                          {
                              "descr": "General",
