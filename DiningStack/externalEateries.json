@@ -41,6 +41,9 @@
                     ]
                 }
             ],
+           "datesClosed": [
+             "12/15/18-1/22/19"
+           ],
            "payMethods" : [
                 {
                     "descr": "Cash",
@@ -136,6 +139,9 @@
                     "descr": "Meal Plan - Debit Plans (Big Red Bucks, Meal Choice, etc)",
                     "descrshort": "Meal Plan - Debit"
                 }
+            ],
+            "datesClosed": [
+              "12/15/18-1/17/19"
             ],
             "diningItems": [
                 {
@@ -234,6 +240,7 @@
                     ]
                 }
             ],
+           "datesClosed": [],
            "payMethods" : [
                 {
                     "descr": "Cash",
@@ -465,6 +472,9 @@
                      ]
                 }
             ],
+           "datesClosed": [
+             "12/14/18-1/2/19"
+           ],
            "payMethods" : [
                 {
                     "descr": "Cash",
@@ -528,6 +538,7 @@
                      ]
                 }
             ],
+           "datesClosed": [],
            "payMethods" : [
                 {
                     "descr": "Cash",
@@ -590,6 +601,7 @@
                      ]
                 }
             ],
+           "datesClosed": [],
            "payMethods" : [
                 {
                     "descr": "Cash",
