@@ -19,7 +19,7 @@
            },
            "operatingHours": [
                 {
-                    "weekday": "monday-wednesday",
+                    "weekday": "monday-friday",
                     "events": [
                          {
                              "descr": "Lunch",
@@ -28,22 +28,9 @@
                              "menu": []
                          }
                      ]
-                },
-                {
-                    "weekday": "thursday-friday",
-                    "events": [
-                        {
-                            "descr": "Lunch",
-                            "start": "10:00am",
-                            "end": "2:30pm",
-                            "menu": []
-                        }
-                    ]
                 }
             ],
-           "datesClosed": [
-             "12/15/18-1/22/19"
-           ],
+           "datesClosed": [],
            "payMethods" : [
                 {
                     "descr": "Cash",
@@ -104,7 +91,7 @@
            "location": "Statler Hotel",
            "operatingHours": [
                 {
-                    "weekday": "monday-wednesday",
+                    "weekday": "monday-friday",
                     "events": [
                          {
                              "descr": "General",
@@ -115,12 +102,12 @@
                      ]
                 },
                 {
-                    "weekday": "thursday",
+                    "weekday": "sunday",
                     "events": [
                          {
                              "descr": "General",
-                             "start": "7:30am",
-                             "end": "2:30pm",
+                             "start": "2:30pm",
+                             "end": "7:30pm",
                              "menu": []
                          }
                     ]
@@ -140,9 +127,7 @@
                     "descrshort": "Meal Plan - Debit"
                 }
             ],
-            "datesClosed": [
-              "12/15/18-1/17/19"
-            ],
+            "datesClosed": [],
             "diningItems": [
                 {
                   "item": "Pizza",
@@ -185,33 +170,22 @@
            "location": "Mann Library",
            "operatingHours": [
                 {
-                    "weekday": "monday-wednesday",
+                    "weekday": "monday-thursday",
                     "events": [
                          {
                              "descr": "General",
-                             "start": "8:00am",
-                             "end": "9:00pm",
+                             "start": "7:30am",
+                             "end": "7:00pm",
                              "menu": []
                          }
                   	]
-                },
-                {
-                    "weekday": "thursday",
-                    "events": [
-                         {
-                             "descr": "General",
-                             "start": "8:00am",
-                             "end": "8:00pm",
-                             "menu": []
-                         }
-                   	]
                 },
                 {
                     "weekday": "friday",
                     "events": [
                          {
                              "descr": "General",
-                             "start": "8:00am",
+                             "start": "7:30am",
                              "end": "5:00pm",
                              "menu": []
                          }
@@ -234,7 +208,7 @@
                          {
                              "descr": "General",
                              "start": "11:00am",
-                             "end": "8:00pm",
+                             "end": "7:00pm",
                              "menu": []
                         }
                     ]
@@ -461,7 +435,7 @@
            "location": "Goldwin Smith Hall",
            "operatingHours": [
                 {
-                    "weekday": "friday",
+                    "weekday": "monday-friday",
                     "events": [
                          {
                              "descr": "General",
@@ -472,9 +446,7 @@
                      ]
                 }
             ],
-           "datesClosed": [
-             "12/14/18-1/2/19"
-           ],
+           "datesClosed": [],
            "payMethods" : [
                 {
                     "descr": "Cash",
@@ -532,7 +504,7 @@
                          {
                              "descr": "General",
                              "start": "8:00am",
-                             "end": "5:30pm",
+                             "end": "4:00pm",
                              "menu": []
                          }
                      ]
