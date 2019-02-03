@@ -91,7 +91,7 @@
            "location": "Statler Hotel",
            "operatingHours": [
                 {
-                    "weekday": "monday-friday",
+                    "weekday": "monday-thursday",
                     "events": [
                          {
                              "descr": "General",
@@ -102,14 +102,14 @@
                      ]
                 },
                 {
-                    "weekday": "sunday",
+                    "weekday": "friday",
                     "events": [
-                         {
-                             "descr": "General",
-                             "start": "2:30pm",
-                             "end": "7:30pm",
-                             "menu": []
-                         }
+                        {
+                            "descr": "General",
+                            "start": "7:30am",
+                            "end": "2:30pm",
+                            "menu": []
+                        }
                     ]
                 }
             ],
@@ -127,7 +127,7 @@
                     "descrshort": "Meal Plan - Debit"
                 }
             ],
-            "datesClosed": [],
+            "datesClosed": ["2/24/19-2/26/19"],
             "diningItems": [
                 {
                   "item": "Pizza",
