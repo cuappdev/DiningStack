@@ -323,6 +323,54 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Collegetown Pizza",
+      "alias": "college-town-pizza-ithaca",
+      "hours": [
+        {
+          "is_overnight": true,
+          "start": "1000",
+          "end": "0000",
+          "day": 0
+        },
+        {
+          "is_overnight": true,
+          "start": "1000",
+          "end": "0000",
+          "day": 1
+        },
+        {
+          "is_overnight": true,
+          "start": "1000",
+          "end": "0000",
+          "day": 2
+        },
+        {
+          "is_overnight": true,
+          "start": "1000",
+          "end": "0300",
+          "day": 3
+        },
+        {
+          "is_overnight": true,
+          "start": "1000",
+          "end": "0300",
+          "day": 4
+        },
+        {
+          "is_overnight": true,
+          "start": "1000",
+          "end": "0300",
+          "day": 5
+        },
+        {
+          "is_overnight": true,
+          "start": "1000",
+          "end": "0000",
+          "day": 6
+        }
+      ]
     }
   ]
 }
