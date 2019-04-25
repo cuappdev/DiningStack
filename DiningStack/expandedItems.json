@@ -1,0 +1,1041 @@
+{
+  "eateries": [
+    {
+      "name": "Atrium Café",
+      "slug": "Atrium-Cafe",
+      "categories": [
+        {
+          "category": "Main",
+          "stations": [
+            {
+              "station": "Hot Fresh Pizza",
+              "diningItems": [
+                {
+                  "item": "Cheese Pizza",
+                  "choices": [],
+                  "price": "$4.49"
+                },
+                {
+                  "item": "Veggie Pizza",
+                  "choices": [],
+                  "price": "$4.99"
+                },
+                {
+                  "item": "Pepperoni Pizza",
+                  "choices": [],
+                  "price": "$4.99"
+                },
+                {
+                  "item": "Gourmet Pizza",
+                  "choices": [],
+                  "price": "$5.69"
+                }
+              ]
+            },
+            {
+              "station": "Specialty Sandwiches",
+              "diningItems": [
+                {
+                  "item": "Joint Ventures",
+                  "choices": [],
+                  "price": "$6.99"
+                },
+                {
+                  "item": "Parker Center Pesto",
+                  "choices": [],
+                  "price": "$6.99"
+                },
+                {
+                  "item": "PhD Eggplant",
+                  "choices": [],
+                  "price": "$6.99"
+                },
+                {
+                  "item": "Financial Derivatives",
+                  "choices": [],
+                  "price": "$6.99"
+                },
+                {
+                  "item": "Immersion Chicken",
+                  "choices": [],
+                  "price": "$6.99"
+                },
+                {
+                  "item": "Merger of Equals",
+                  "choices": [],
+                  "price": "$6.99"
+                },
+                {
+                  "item": "Supply Chain Wraps",
+                  "choices": [],
+                  "price": "$6.99"
+                }
+              ]
+            },
+            {
+              "station": "Custom Deli Sandwiches",
+              "diningItems": [
+                {
+                  "item": "Gourmet Sandwiches",
+                  "category": "",
+                  "choices": [
+                    {
+                      "label": "Bread",
+                      "options": [
+                        "Multigrain",
+                        "Ciabatta",
+                        "Kaiser roll",
+                        "Plain wrap",
+                        "Wheat wrap",
+                        "Spinach wrap"
+                      ]
+                    },
+                    {
+                      "label": "Protein",
+                      "options": [
+                        "Turkey",
+                        "Ham",
+                        "Pulled pork",
+                        "Chicken breast",
+                        "Egg salad",
+                        "Chicken salad",
+                        "Tuna salad",
+                        "Tofu",
+                        "Hummus"
+                      ]
+                    },
+                    {
+                      "label": "Cheese",
+                      "options": [
+                        "American",
+                        "Swiss",
+                        "Brie",
+                        "Provolone",
+                        "Cheddar"
+                      ]
+                    },
+                    {
+                      "label": "Toppings",
+                      "options": [
+                        "Lettuce",
+                        "Tomato",
+                        "Onion",
+                        "Spinach",
+                        "Cucumber",
+                        "Coleslaw",
+                        "Olives",
+                        "Banana Peppers",
+                        "Jalapeños",
+                        "Hummus",
+                        "Grilled Veggies",
+                        "Pico de Gallo"
+                      ]
+                    },
+                    {
+                      "label": "Condiments",
+                      "options": [
+                        "Mayonaise",
+                        "Spicy Mustard",
+                        "Honey Mustard",
+                        "BBQ Sauce"
+                      ]
+                    }
+                  ],
+                  "price": "$6.99"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bear Necessities Grill & C-Store",
+      "slug": "Bear-Necessities",
+      "categories": [
+        {
+          "category": "Main",
+          "stations": [
+            {
+              "station": "Bear Grill",
+              "diningItems": [
+                {
+                  "item": "Cornell Smash",
+                  "choices": [],
+                  "price": "$6.29"
+                },
+                {
+                  "item": "Cheesy Smash",
+                  "choices": [],
+                  "price": "$3.69"
+                },
+                {
+                  "item": "4 Piece Chicken Tenders",
+                  "choices": [],
+                  "price": "$5.99"
+                },
+                {
+                  "item": "Fresh Cut Fries",
+                  "choices": [],
+                  "price": "$2.59"
+                },
+                {
+                  "item": "Fresh Cut Fries with Cheese",
+                  "choices": [],
+                  "price": "$3.29"
+                },
+                {
+                  "item": "Cayuga Fish Sandwich",
+                  "choices": [],
+                  "price": "$4.99"
+                },
+                {
+                  "item": "Onion Rings",
+                  "choices": [],
+                  "price": "$4.49"
+                },
+                {
+                  "item": "Bear Sampler",
+                  "choices": [],
+                  "price": "$8.79"
+                },
+                {
+                  "item": "Tompkins Spice Burger",
+                  "choices": [],
+                  "price": "$6.49"
+                },
+                {
+                  "item": "Tompkins Spice Bo Burger",
+                  "choices": [],
+                  "price": "$7.39"
+                },
+                {
+                  "item": "Grilled Chicken Sandwich",
+                  "choices": [],
+                  "price": "$5.49"
+                },
+                {
+                  "item": "Fried Chicken Sandwich",
+                  "choices": [],
+                  "price": "$5.99"
+                },
+                {
+                  "item": "Turkey Burger",
+                  "choices": [],
+                  "price": "$5.49"
+                },
+                {
+                  "item": "Garden Burger",
+                  "choices": [],
+                  "price": "$5.49"
+                }
+              ]
+            },
+            {
+              "station": "5-Star Subs",
+              "diningItems": [
+                {
+                  "item": "Southwest Chicken",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Half",
+                        "Whole"
+                      ]
+                    }
+                  ],
+                  "price": "$6.49/$8.49"
+                },
+                {
+                  "item": "Buffalo Chicken",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Half",
+                        "Whole"
+                      ]
+                    }
+                  ],
+                  "price": "$6.49/$8.49"
+                },
+                {
+                  "item": "Turkey Club",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Half",
+                        "Whole"
+                      ]
+                    }
+                  ],
+                  "price": "$6.59/$8.69"
+                },
+                {
+                  "item": "Bear Steak-n-Cheese",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Half",
+                        "Whole"
+                      ]
+                    }
+                  ],
+                  "price": "$6.99/$8.99"
+                },
+                {
+                  "item": "Chicken Cordon Bleu",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Half",
+                        "Whole"
+                      ]
+                    }
+                  ],
+                  "price": "$6.49/$8.49"
+                },
+                {
+                  "item": "Meatball",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Half",
+                        "Whole"
+                      ]
+                    }
+                  ],
+                  "price": "$6.49/$8.49"
+                },
+                {
+                  "item": "Tuna Melt",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Half",
+                        "Whole"
+                      ]
+                    }
+                  ],
+                  "price": "$6.49/$8.49"
+                },
+                {
+                  "item": "Made to Order",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Half",
+                        "Whole"
+                      ]
+                    }
+                  ],
+                  "price": "$6.49/$8.49"
+                }
+              ]
+            },
+            {
+              "station": "Liberty Pizza",
+              "diningItems": [
+                {
+                  "item": "Mini Cheese Pizza",
+                  "choices": [],
+                  "price": "$4.49"
+                },
+                {
+                  "item": "Mini Cheese Pizza with Meat",
+                  "choices": [],
+                  "price": "$4.49"
+                },
+                {
+                  "item": "Mini Custom Pizza",
+                  "choices": [],
+                  "price": "$4.99"
+                },
+                {
+                  "item": "18\" Pizza",
+                  "choices": [],
+                  "price": "$12.99"
+                },
+                {
+                  "item": "Buffalo Chicken Pizza",
+                  "choices": [],
+                  "price": "$16.79"
+                },
+                {
+                  "item": "1/2 Pound Boneless Wings",
+                  "choices": [],
+                  "price": "$12.49"
+                },
+                {
+                  "item": "1 Pound Boneless Wings",
+                  "choices": [],
+                  "price": "$12.49"
+                },
+                {
+                  "item": "Bear Pizza Pack",
+                  "choices": [],
+                  "price": "$24.99"
+                },
+                {
+                  "item": "Additional Pizza Toppings",
+                  "choices": [],
+                  "price": "$1.99"
+                }
+              ]
+            },
+            {
+              "station": "Liberty Calzones",
+              "diningItems": [
+                {
+                  "item": "Brooklyn",
+                  "choices": [],
+                  "price": "$6.49"
+                },
+                {
+                  "item": "Queens",
+                  "choices": [],
+                  "price": "$6.49"
+                },
+                {
+                  "item": "Buffalo",
+                  "choices": [],
+                  "price": "$6.49"
+                },
+                {
+                  "item": "Manhatten",
+                  "choices": [],
+                  "price": "$6.49"
+                },
+                {
+                  "item": "Create Your Own Calzone",
+                  "choices": [],
+                  "price": "$6.49"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Breakfast",
+          "stations": [
+            {
+              "station": "Breakfast",
+              "diningItems": [
+                {
+                  "item": "Bagel",
+                  "choices": [],
+                  "price": "$1.59"
+                },
+                {
+                  "item": "Cream Cheese",
+                  "choices": [],
+                  "price": "$0.89"
+                },
+                {
+                  "item": "Home Fried Potato Patty",
+                  "choices": [],
+                  "price": "$1.49"
+                },
+                {
+                  "item": "French Toast Sticks",
+                  "choices": [],
+                  "price": "$3.29"
+                },
+                {
+                  "item": "Egg & Cheese Sandwich",
+                  "choices": [],
+                  "price": "$3.49"
+                },
+                {
+                  "item": "Egg, Cheese & Meat Sandwich",
+                  "choices": [],
+                  "price": "$3.99"
+                }
+              ]
+            },
+            {
+              "station": "Baked Goods",
+              "diningItems": [
+                {
+                  "item": "Jumbo Muffins",
+                  "choices": [],
+                  "price": "$2.30"
+                },
+                {
+                  "item": "David's Cookies",
+                  "choices": [],
+                  "price": "$1.80"
+                },
+                {
+                  "item": "Scones",
+                  "choices": [],
+                  "price": "$2.70"
+                },
+                {
+                  "item": "Cornbread",
+                  "choices": [],
+                  "price": "$1.10"
+                },
+                {
+                  "item": "Danish",
+                  "choices": [],
+                  "price": "$2.70"
+                },
+                {
+                  "item": "Cinnamon Twists",
+                  "choices": [],
+                  "price": "$2.40"
+                },
+                {
+                  "item": "Sticky Buns",
+                  "choices": [],
+                  "price": "$4.20"
+                },
+                {
+                  "item": "Cinnamon Buns",
+                  "choices": [],
+                  "price": "$3.20"
+                },
+                {
+                  "item": "Brownies",
+                  "choices": [],
+                  "price": "$1.59"
+                },
+                {
+                  "item": "Plain Croissant",
+                  "choices": [],
+                  "price": "$3.20"
+                },
+                {
+                  "item": "Half Moon Cookie",
+                  "choices": [],
+                  "price": "$1.70"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Beverages",
+          "stations": [
+            {
+              "station": "Coffee",
+              "diningItems": [
+                {
+                  "item": "Brewed Coffee",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Small",
+                        "Medium"
+                      ]
+                    }
+                  ],
+                  "price": "$1.99/$2.99"
+                },
+                {
+                  "item": "Brewed Ice Coffee",
+                  "choices": [],
+                  "price": "$2.69"
+                },
+                {
+                  "item": "Americano",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Small",
+                        "Medium"
+                      ]
+                    }
+                  ],
+                  "price": "$2.29/$2.79"
+                },
+                {
+                  "item": "Capuccino",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Small",
+                        "Medium"
+                      ]
+                    }
+                  ],
+                  "price": "$3.29/$3.79"
+                },
+                {
+                  "item": "Café Latte",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Small",
+                        "Medium"
+                      ]
+                    }
+                  ],
+                  "price": "$3.29/$3.89"
+                },
+                {
+                  "item": "Flavored Latte",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Small",
+                        "Medium"
+                      ]
+                    }
+                  ],
+                  "price": "$3.89/$4.49"
+                },
+                {
+                  "item": "Mocha",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Small",
+                        "Medium"
+                      ]
+                    }
+                  ],
+                  "price": "$3.79/$4.49"
+                },
+                {
+                  "item": "Chai Latte",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Small",
+                        "Medium"
+                      ]
+                    }
+                  ],
+                  "price": "$3.39/$4.09"
+                },
+                {
+                  "item": "Hot Cocoa",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Small",
+                        "Medium"
+                      ]
+                    }
+                  ],
+                  "price": "$2.89/$3.39"
+                },
+                {
+                  "item": "Tazo Tea",
+                  "choices": [],
+                  "price": "$2.29"
+                },
+                {
+                  "item": "Espresso",
+                  "choices": [
+                    {
+                      "label": "Sizes",
+                      "options": [
+                        "Small",
+                        "Medium"
+                      ]
+                    }
+                  ],
+                  "price": "$1.99/$2.19"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bus Stop Bagels",
+      "slug": "Bug-Stop-Bagels",
+      "categories": [
+        {
+          "category": "Main",
+          "stations": [
+            {
+              "station": "Signature",
+              "diningItems": [
+                {
+                  "item": "Route 15",
+                  "choices": [],
+                  "price": "$5.49"
+                },
+                {
+                  "item": "Route 13",
+                  "choices": [],
+                  "price": "$6.99"
+                },
+                {
+                  "item": "Route 92",
+                  "choices": [],
+                  "price": "$6.99"
+                },
+                {
+                  "item": "Route 81",
+                  "choices": [],
+                  "price": "$5.99"
+                },
+                {
+                  "item": "Route 21",
+                  "choices": [],
+                  "price": "$6.49"
+                },
+                {
+                  "item": "Route 10",
+                  "choices": [],
+                  "price": "$4.99"
+                },
+                {
+                  "item": "Route 65",
+                  "choices": [],
+                  "price": "$5.49"
+                },
+                {
+                  "item": "Route 41",
+                  "choices": [],
+                  "price": "$6.99"
+                },
+                {
+                  "item": "Route 32",
+                  "choices": [],
+                  "price": "$6.99"
+                }
+              ]
+            },
+            {
+              "station": "Bagels",
+              "diningItems": [
+                {
+                  "item": "Plain",
+                  "choices": [],
+                  "price": "$1.59"
+                },
+                {
+                  "item": "Sesame",
+                  "choices": [],
+                  "price": "$1.59"
+                },
+                {
+                  "item": "Long Island",
+                  "choices": [],
+                  "price": "$1.49"
+                },
+                {
+                  "item": "Spicy Italian",
+                  "choices": [],
+                  "price": "$1.49"
+                },
+                {
+                  "item": "Cheddar",
+                  "choices": [],
+                  "price": "$1.49"
+                },
+                {
+                  "item": "Salt Rosemary",
+                  "choices": [],
+                  "price": "$1.49"
+                }
+              ]
+            },
+            {
+              "station": "Spreads",
+              "diningItems": [
+                {
+                  "item": "Butter",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Apple Butter",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Blueberry Apple Butter",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Cornell Honey-Roasted Peanut Butter",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Basil Pesto",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Cinnamon Sugar",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Creamed Honey",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Local Wildflower Honey",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Nutella",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Hummus",
+                  "choices": [],
+                  "price": "$1.29"
+                }
+              ]
+            },
+            {
+              "station": "Whipped Cream Cheese",
+              "diningItems": [
+                {
+                  "item": "Plain",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Vegetable",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Mixed Berry",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Sundried Tomato",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Honey Walnut",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Chive",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Bacon Scallion",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Vegan",
+                  "choices": [],
+                  "price": "$1.29"
+                }
+              ]
+            },
+            {
+              "station": "Cheese",
+              "diningItems": [
+                {
+                  "item": "Cheddar",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Swiss",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Fresh Mozzarella",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Pepper Jack",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Vegan",
+                  "choices": [],
+                  "price": "$1.29"
+                }
+              ]
+            },
+            {
+              "station": "Toppings",
+              "diningItems": [
+                {
+                  "item": "Sliced Apple",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Banana",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Roasted Tomato",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Pickled Fennel & Cucumber",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Avocado",
+                  "choices": [],
+                  "price": "$1.29"
+                },
+                {
+                  "item": "Arugula",
+                  "choices": [],
+                  "price": "$1.29"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Beverages",
+          "stations": [
+            {
+              "station": "Smoothies",
+              "diningItems": [
+                {
+                  "item": "Fruit",
+                  "choices": [],
+                  "price": "$4.99"
+                },
+                {
+                  "item": "Probiotic",
+                  "choices": [],
+                  "price": "$4.99"
+                },
+                {
+                  "item": "Bulk",
+                  "choices": [],
+                  "price": "$5.49"
+                },
+                {
+                  "item": "Recover",
+                  "choices": [],
+                  "price": "$5.99"
+                },
+                {
+                  "item": "Performance Powders",
+                  "choices": [],
+                  "price": "$0.99"
+                }
+              ]
+            },
+            {
+              "station": "Coffee",
+              "diningItems": [
+                {
+                  "item": "Brewed Coffee",
+                  "choices": [],
+                  "price": "$1.99"
+                },
+                {
+                  "item": "Brewed Ice Coffee",
+                  "choices": [],
+                  "price": "$2.69"
+                },
+                {
+                  "item": "Cold Brew",
+                  "choices": [],
+                  "price": "$3.39"
+                },
+                {
+                  "item": "Americano",
+                  "choices": [],
+                  "price": "$2.79"
+                },
+                {
+                  "item": "Cappuccino",
+                  "choices": [],
+                  "price": "$3.79"
+                },
+                {
+                  "item": "Caffé Latte",
+                  "choices": [],
+                  "price": "$3.89"
+                },
+                {
+                  "item": "Flavored Latte",
+                  "choices": [],
+                  "price": "$4.49"
+                },
+                {
+                  "item": "Chai Latte",
+                  "choices": [],
+                  "price": "$4.09"
+                },
+                {
+                  "item": "Mocha",
+                  "choices": [],
+                  "price": "$4.49"
+                },
+                {
+                  "item": "Caramel Macchiato",
+                  "choices": [],
+                  "price": "$4.69"
+                },
+                {
+                  "item": "Espresso",
+                  "choices": [],
+                  "price": "$1.99"
+                },
+                {
+                  "item": "Tazo Tea",
+                  "choices": [],
+                  "price": "$2.29"
+                },
+                {
+                  "item": "Tazo Iced Tea",
+                  "choices": [],
+                  "price": "$2.49"
+                },
+                {
+                  "item": "Hot Cocoa",
+                  "choices": [],
+                  "price": "$2.89"
+                },
+                {
+                  "item": "Frappuccino",
+                  "choices": [],
+                  "price": "$4.89"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
