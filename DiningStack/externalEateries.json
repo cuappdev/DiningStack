@@ -19,7 +19,29 @@
            },
            "operatingHours": [
                 {
-                    "weekday": "monday-friday",
+                    "weekday": "monday-tuesday",
+                    "events": [
+                         {
+                             "descr": "Lunch",
+                             "start": "10:00am",
+                             "end": "3:00pm",
+                             "menu": []
+                         }
+                     ]
+                },
+                {
+                    "weekday": "wednesday",
+                    "events": [
+                         {
+                             "descr": "Lunch",
+                             "start": "8:00am",
+                             "end": "3:00pm",
+                             "menu": []
+                         }
+                     ]
+                },
+                {
+                    "weekday": "thursday-friday",
                     "events": [
                          {
                              "descr": "Lunch",
