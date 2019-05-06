@@ -30,7 +30,7 @@
                      ]
                 }
             ],
-           "datesClosed": ["3/15/19"],
+           "datesClosed": ["5/27/19","5/28/19"],
            "payMethods" : [
                 {
                     "descr": "Cash",
@@ -138,7 +138,7 @@
                     "descrshort": "Meal Plan - Debit"
                 }
             ],
-            "datesClosed": ["3/15/19", "3/29/19"],
+            "datesClosed": ["5/18/19-5/31/19"],
             "diningItems": [
                 {
                   "item": "Pizza",
@@ -230,7 +230,7 @@
                          {
                              "descr": "General",
                              "start": "11:00am",
-                             "end": "8:00pm",
+                             "end": "9:00pm",
                              "menu": []
                         }
                     ]
