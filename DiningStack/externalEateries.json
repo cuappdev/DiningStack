@@ -24,7 +24,7 @@
                          {
                              "descr": "Lunch",
                              "start": "10:00am",
-                             "end": "2:30pm",
+                             "end": "3:00pm",
                              "menu": []
                          }
                      ]
@@ -35,7 +35,7 @@
                          {
                              "descr": "Lunch",
                              "start": "10:00am",
-                             "end": "2:30pm",
+                             "end": "3:00pm",
                              "menu": []
                          }
                      ]
@@ -46,13 +46,13 @@
                          {
                              "descr": "Lunch",
                              "start": "10:00am",
-                             "end": "2:30pm",
+                             "end": "3:00pm",
                              "menu": []
                          }
                      ]
                 }
             ],
-           "datesClosed": ["5/27/19","5/28/19"],
+           "datesClosed": [],
            "payMethods" : [
                 {
                     "descr": "Cash",
@@ -112,7 +112,28 @@
            },
            "location": "Statler Hotel",
            "operatingHours": [
-                
+                {
+                    "weekday": "monday-thursday",
+                    "events": [
+                         {
+                             "descr": "General",
+                             "start": "7:30am",
+                             "end": "4:00pm",
+                             "menu": []
+                         }
+                     ]
+                },
+               {
+                    "weekday": "friday",
+                    "events": [
+                         {
+                             "descr": "General",
+                             "start": "7:30am",
+                             "end": "2:30pm",
+                             "menu": []
+                         }
+                     ]
+                },
             ],
            "payMethods" : [
                 {
@@ -171,60 +192,17 @@
            "location": "Mann Library",
            "operatingHours": [
                 {
-                    "weekday": "monday-wednesday",
+                    "weekday": "monday-friday",
                     "events": [
                          {
                              "descr": "General",
-                             "start": "7:30am",
-                             "end": "9:00pm",
+                             "start": "8:00am",
+                             "end": "4:30pm",
                              "menu": []
                          }
                   	]
                 },
-                {
-                    "weekday": "thursday",
-                    "events": [
-                         {
-                             "descr": "General",
-                             "start": "7:30am",
-                             "end": "8:00pm",
-                             "menu": []
-                         }
-                   	]
-                },
-                {
-                    "weekday": "friday",
-                    "events": [
-                         {
-                             "descr": "General",
-                             "start": "7:30am",
-                             "end": "5:00pm",
-                             "menu": []
-                         }
-                   	]
-                },
-                {
-                    "weekday": "saturday",
-                    "events": [
-                         {
-                             "descr": "General",
-                             "start": "11:00am",
-                             "end": "5:00pm",
-                             "menu": []
-                         }
-                    ]
-                },
-                {
-                    "weekday": "sunday",
-                    "events": [
-                         {
-                             "descr": "General",
-                             "start": "11:00am",
-                             "end": "9:00pm",
-                             "menu": []
-                        }
-                    ]
-                }
+               
             ],
            "datesClosed": [],
            "payMethods" : [
@@ -516,7 +494,7 @@
                          {
                              "descr": "General",
                              "start": "8:00am",
-                             "end": "5:30pm",
+                             "end": "4:00pm",
                              "menu": []
                          }
                      ]
