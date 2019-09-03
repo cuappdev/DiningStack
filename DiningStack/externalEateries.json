@@ -133,7 +133,7 @@
                              "menu": []
                          }
                      ]
-                },
+                }
             ],
            "payMethods" : [
                 {
@@ -201,8 +201,7 @@
                              "menu": []
                          }
                   	]
-                },
-               
+                }
             ],
            "datesClosed": [],
            "payMethods" : [
