@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "DiningStack"
-  s.version          = "1.1"
+  s.version          = "1.2"
   s.summary          = "Open Source Implementation of Cornell Dining's API"
   s.homepage         = "https://github.com/cuappdev/DiningStack"
   s.license          = 'MIT'
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
   s.module_name = 'DiningStack'
 
   s.dependency 'Alamofire'
-  s.dependency 'SwiftyJSON', '4.2'
+  s.dependency 'SwiftyJSON'
 
 end

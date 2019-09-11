@@ -2,7 +2,7 @@ use_frameworks!
 
 def shared_pods
     pod 'Alamofire'
-    pod 'SwiftyJSON', '4.2'
+    pod 'SwiftyJSON'
 end
 
 target :'DiningStack' do
@@ -11,6 +11,6 @@ target :'DiningStack' do
 end
 
 target :'DiningStack WatchKit' do
-    platform :watchos, '3.0'
+    platform :watchos, '2.0'
     shared_pods
 end
